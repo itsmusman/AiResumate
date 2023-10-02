@@ -1,0 +1,822 @@
+<html>
+    <head>
+      <style>
+        body {
+          margin: auto;
+        }
+        @import url("https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@300;400;500;600;700;800");
+        @import url("https://fonts.googleapis.com/css2?family=Saira+Stencil+One");
+  
+        body {
+          background: #fff;
+          text-align: left;
+          font-feature-settings: "liga" 0;
+          -moz-font-feature-settings: "liga" off;
+        }
+        .genie table {
+          border-collapse: collapse;
+          border-spacing: 0;
+          font-size: inherit;
+          color: inherit;
+          width: 100%;
+        }
+  
+        /* START content disc style for LI */
+        .genie ul,
+        .genie li {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        .genie ul li {
+          position: relative;
+          margin: 0px;
+          padding-left: 9px;
+        }
+        .genie ul li:last-child {
+          padding-bottom: 0px;
+        }
+        .genie ul li:before {
+          content: "";
+          font-size: 10px;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        /* END content disc style for LI */
+  
+        .genie .paddedline {
+          display: block;
+        }
+        .genie .jobline ul,
+        .genie .degree-gap,
+        .genie .education ul {
+          margin-top: 5px;
+        }
+        .genie .txt-bold {
+          font-weight: 600;
+        }
+        .genie .txt-cptz {
+          text-transform: capitalize;
+        }
+        .genie .flt-right {
+          float: right;
+        }
+        .genie .txt-bold {
+          font-weight: bold;
+        }
+        .genie .brk-all {
+          word-break: break-all;
+        }
+  
+        .genie {
+          color: #000;
+          font-variant-ligatures: none;
+          word-wrap: break-word;
+          font-weight: 400;
+        }
+        .genie .name {
+          font-weight: bold;
+          color: #000;
+          text-transform: capitalize;
+          letter-spacing: 1px;
+          font-weight: 300;
+          position: relative;
+          max-width: 382px;
+        }
+        .genie .name-in span {
+          display: inline-block;
+          max-width: 377px;
+        }
+        .genie .resume-title {
+          position: relative;
+          display: block;
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: 0.5px;
+          font-weight: 600;
+          padding-top: 3px;
+          text-transform: capitalize;
+          max-width: 382px;
+        }
+        .genie .resume-title span {
+          display: block;
+          text-transform: lowercase;
+        }
+        .genie .resume-title span:first-letter {
+          text-transform: capitalize;
+        }
+  
+        /* Heading */
+        .genie .heading {
+          font-size: 12px;
+          text-transform: uppercase;
+          color: #0c6ba1;
+          letter-spacing: 1px;
+          font-weight: 800;
+          margin-bottom: 5px;
+        }
+        .genie .parent-container,
+        .genie .top-container {
+          display: table;
+          margin-left: 30px;
+          margin-right: 30px;
+          table-layout: fixed;
+          width: calc(100% - 60px);
+        }
+        .genie .parent-container {
+          min-height: 685px;
+        }
+  
+        /* Common style for left and right box */
+        .genie .left-box,
+        .genie .address.fieldgroup {
+          position: relative;
+        }
+        .genie .left-box,
+        .genie .right-box {
+          box-sizing: content-box;
+          padding: 0px 20px 30px 20px;
+          display: table-cell;
+          position: relative;
+          vertical-align: top;
+        }
+        .genie .right-box {
+          padding: 0px 0 30px 20px;
+        }
+        .genie .mid-container {
+          color: #fff;
+          display: table;
+          table-layout: fixed;
+          width: 100%;
+        }
+        .genie .top-container .right-box,
+        .genie .top-container .left-box {
+          padding-bottom: 0px;
+          margin-bottom: 0px;
+        }
+        .genie .top-container .right-box > .section:first-child,
+        .genie .mid-container .right-box > .section {
+          padding: 0;
+          border: 0;
+          margin-left: -205px;
+          margin-right: -30px;
+          padding: 47px 30px 30px 205px;
+        }
+        .genie .top-container .right-box > .section:first-child:before,
+        .genie
+          .top-container
+          .right-box
+          > .sortable-item:first-child
+          .section:before {
+          width: 100%;
+          content: "";
+          height: 100%;
+          background: #0c6ba1;
+          opacity: 0.12;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+        }
+        .genie .left-box:before {
+          width: 100%;
+          content: "";
+          height: 100%;
+          background: #0c6ba1;
+          opacity: 0.1;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+        }
+        .genie .section {
+          position: relative;
+        }
+        .genie .parent-container .left-box,
+        .genie .parent-container .right-box {
+          padding-top: 30px;
+        }
+        .genie .parent-container .left-box .section:first-child,
+        .genie .parent-container .right-box .section:first-child {
+          padding-top: 0 !important;
+        }
+        .genie .right-box .section-hilt .paddedline {
+          margin-bottom: 5px;
+          display: table-cell;
+          width: 50%;
+          padding-right: 15px;
+        }
+        .genie .right-box .section-tpfl .paddedline {
+          display: inline-block;
+          width: 49.5%;
+          box-sizing: border-box;
+          margin-bottom: 0;
+        }
+        .genie .right-box .section-hilt .paddedline:last-child {
+          padding-right: 0px;
+        }
+        .genie .cntc-sec,
+        .genie .sum-sec .paragraph {
+          font-weight: 500;
+        }
+        .genie .mid-container .right-box,
+        .genie .mid-container .left-box {
+          padding-bottom: 0px;
+        }
+        .genie .mid-container .right-box > .section {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          margin-bottom: 0px;
+          margin-right: 0;
+          margin-left: -175px;
+        }
+        .genie .mid-container .left-box:before {
+          margin-left: 30px;
+          opacity: 0.2;
+          background: #494949;
+        }
+        .genie .name-in {
+          position: relative;
+          display: inline-block;
+        }
+        .genie .name-in:before {
+          position: absolute;
+          content: " ";
+          width: 50px;
+          height: 2px;
+          background: #0c6ba1;
+          top: -5px;
+          left: 0px;
+        }
+        .genie .sprtr {
+          padding: 0 5px;
+        }
+        .genie .name-in span:empty {
+          display: none;
+        }
+        .genie .social .field a {
+          color: #fff;
+          text-decoration: underline;
+        }
+        .genie .social .field a:hover {
+          text-decoration: underline;
+        }
+        .genie .paragraph-fieldgroup {
+          display: flex;
+        }
+  
+        /*New logic for infographic*/
+        .genie .lang-sec .singlecolumn,
+        .genie .skli-sec .singlecolumn {
+          display: none;
+        }
+        .genie .lang-sec.infobarsec .infobarpara,
+        .genie .lang-sec.infotilesec .infotilepara,
+        .genie .skli-sec.infobarsec .infobarpara,
+        .genie .skli-sec.infotilesec .infotilepara {
+          display: block;
+        }
+  
+        /*Infographic*/
+        .genie .lang-sec.infobarsec {
+          font-size: 0;
+        }
+        .genie .lang-sec.infobarsec .field *,
+        .genie .lang-sec.infobarsec .nativeLangPara .field {
+          display: inline;
+        }
+        .genie .right-box .lang-sec.infobarsec .para_odd {
+          margin-right: 15px;
+        }
+        .genie .parent-container .right-box .lang-sec.infobarsec .paragraph {
+          display: inline-block;
+          vertical-align: top;
+          padding-bottom: 5px;
+          margin-top: 0px;
+        }
+        .genie .parent-container .right-box .lang-sec.infobarsec .singlecolumn {
+          margin-left: 0 !important;
+        }
+        .genie .lang-sec.infobarsec .nativeLangPara {
+          width: 100% !important;
+        }
+        .genie .left-box .inner-rating {
+          position: relative;
+        }
+        .genie .rating-bar {
+          background: #d5d6d6;
+          width: 100%;
+          clear: both;
+          margin-top: 3px;
+          page-break-inside: avoid;
+        }
+        .genie .inner-rating {
+          background-color: #0c6ba1;
+          height: 4px;
+          width: 60%;
+        }
+        .genie .right-box .lang-sec.infobarsec .paragraph:nth-last-child(1),
+        .genie .right-box .lang-sec.infobarsec .paragraph:nth-last-child(2) {
+          padding-bottom: 0;
+        }
+  
+        /*Infographic Tiles*/
+        .genie .lang-sec.infotilesec,
+        .genie .skli-sec {
+          font-size: 0;
+        }
+        .genie .lang-sec.infotilesec .paragraph,
+        .genie .skli-sec .paragraph {
+          display: inline-block;
+          vertical-align: top;
+          padding-bottom: 5px;
+          margin-top: 0;
+        }
+        .genie .lang-sec.infotilesec > .paragraph:nth-last-child(1),
+        .genie .right-box .lang-sec.infotilesec > .paragraph:nth-last-child(2),
+        .genie .skli-sec > .paragraph:nth-last-child(1),
+        .genie .right-box .skli-sec > .paragraph:nth-last-child(2) {
+          padding-bottom: 0;
+        }
+        .genie .lang-sec.infotilesec .nativeLangPara .field,
+        .genie .lang-sec.infotilesec .field *,
+        .genie .skli-sec .field * {
+          display: inline;
+        }
+        .genie .right-box .lang-sec.infotilesec .singlecolumn,
+        .genie .right-box .skli-sec .singlecolumn {
+          margin-left: 0 !important;
+        }
+        .genie .lang-sec.infotilesec .sliced-rect,
+        .genie .skli-sec .sliced-rect {
+          height: 6px;
+          width: 100%;
+          margin-top: 3px;
+          line-height: 0px;
+          clear: both;
+        }
+        .genie .lang-sec.infotilesec .paragraph.para_odd,
+        .genie .skli-sec .paragraph.para_odd {
+          margin-right: 15px;
+        }
+        .genie .lang-sec.infotilesec .sliced-rect .sliced-rect-tile,
+        .genie .skli-sec .sliced-rect .sliced-rect-tile {
+          height: 100%;
+          background-color: #d5d6d6;
+          float: left;
+          margin-right: 3px;
+        }
+        .genie .lang-sec.infotilesec .sliced-rect .sliced-rect-tile:last-child,
+        .genie .skli-sec .sliced-rect .sliced-rect-tile:last-child {
+          margin-right: 0;
+        }
+  
+        /*Rectangular Rating Blocks*/
+        .genie .sliced-rect .sliced-rect-tile.ratvfill {
+          background-color: #0c6ba1;
+        }
+        .genie .hide-bar .rating-bar,
+        .genie .hide-bar .sliced-rect,
+        .genie .hide-only-bar .rating-bar,
+        .genie .hide-colon .colon,
+        .genie .hide-bar .field-ratt {
+          display: none !important;
+        }
+  
+        /*address order code*/
+        .genie .zipprefix,
+        .genie.MFR .zipsuffix,
+        .genie.MES .zipsuffix {
+          display: none;
+          margin: 0pt;
+          padding: 0pt;
+        }
+        .genie.MFR .zipprefix,
+        .genie.MES .zipprefix {
+          display: block;
+        }
+        .genie .phone-box,
+        .genie .svg-name {
+          margin-left: -155px;
+          margin-right: 40px;
+          width: 115px;
+          display: inline-block;
+          vertical-align: top;
+        }
+        .genie .svg-name {
+          position: absolute;
+          top: -15px;
+          left: 0px;
+        }
+        .genie .svg-name span {
+          font-size: 60px;
+          font-family: "Saira Stencil One";
+          color: #fff;
+          line-height: 70px;
+          opacity: 0.5;
+          text-decoration: underline;
+          text-transform: uppercase;
+        }
+        .genie .text-field {
+          display: inline-block;
+          vertical-align: top;
+          margin-bottom: 5px;
+        }
+  
+        .genie .text-field:nth-child(2n + 2) {
+          margin-left: 20px;
+          margin-right: 0;
+        }
+        .genie .address > .phone-box ~ .text-field:nth-child(2n + 2) {
+          margin-right: 20px;
+          margin-left: 0;
+        }
+        .genie .text-field.fielditem:nth-child(even) {
+          margin-right: 0px;
+        }
+        .genie .text-field:nth-last-child(1),
+        .genie .text-field:nth-last-child(2) {
+          margin-bottom: 0;
+        }
+  
+        /*HILT multi para*/
+        .genie .multi-para-opt .hilt-title {
+          margin-bottom: 3px;
+        }
+        .genie .multi-section-hilt .multi-para-opt,
+        .genie
+          .section:not(.multi-para-hilt):not(.multi-section-hilt)
+          .multi-para-opt,
+        .genie .multi-para-hilt .dflt-view {
+          display: none;
+        }
+        .genie .multi-para-hilt:after {
+          content: "";
+          display: block;
+          clear: both;
+          visibility: hidden;
+          line-height: 0;
+          height: 0;
+        } /*Clearfix*/
+        .genie .right-box .multi-para-hilt .paragraph {
+          display: block;
+          float: left;
+          clear: none;
+          margin-top: 0px;
+          margin-right: 2%;
+        }
+        .genie .right-box .multi-para-hilt .paragraph:nth-child(2n + 1) {
+          margin-right: 0;
+          float: left;
+        }
+        .genie .right-box .multi-para-hilt .paragraph:nth-child(2n) {
+          clear: left;
+        }
+        .genie .right-box .multi-para-hilt .paragraph:last-child,
+        .genie
+          .right-box
+          .multi-para-hilt
+          .paragraph:nth-last-child(2):nth-child(2n) {
+          margin-bottom: 0;
+        }
+        .genie .right-box .multi-para-hilt .singlecolumn {
+          margin-left: 0 !important;
+          padding-left: 0;
+        }
+        .genie .right-box .multi-para-hilt .paragraph {
+          margin-top: 0;
+        }
+        .genie .right-box .multi-para-hilt .paragraph:nth-child(n + 4) {
+          margin-top: 15px;
+        }
+        .genie .right-box .multi-para-hilt .paragraph {
+          width: 49%;
+          max-width: 49%;
+        }
+  
+        /* Builder fixes */
+        .genie .right-box > .sortable-item:first-child,
+        .genie .left-box > .sortable-item:first-child .section {
+          border: none !important;
+        }
+        .genie .top-container .right-box > .sortable-item:first-child .section {
+          min-height: 87px;
+          padding: 0;
+          border: 0;
+          margin-left: -205px;
+          padding: 50px 30px 30px 203px;
+          margin-right: -30px;
+          margin-bottom: 0;
+        }
+        .genie .sortable-item:first-child .section {
+          padding-top: 0px;
+        }
+        .genie .parent-container .left-box .sortable-item.active,
+        .genie .parent-container .left-box > .sortable-item.active .heading {
+          color: #000;
+        }
+        .genie
+          .parent-container
+          .left-box
+          .sortable-item.active
+          .dni-icon
+          .globeicon {
+          fill: #fff;
+        }
+        .genie .left-box .data-CNTC + .sortable-item:not(.data-ALNK) .section {
+          margin-top: 0;
+        }
+        .genie .left-box .data-CNTC + .sortable-item.data-ALNK .section {
+          padding-top: 0px;
+          border: none;
+        }
+        .genie .parent-container .left-box .sortable-item .section {
+          width: 135px;
+          z-index: 1;
+        }
+  
+        /* Style for Signature */
+        .genie .disclaim .singlecolumn,
+        .genie .signPic > .field_sign,
+        .genie .disclaim .paragraph,
+        .genie .sign .paragraph {
+          margin-left: 0px !important;
+        }
+        .genie .disclaim .singlecolumn,
+        .genie .disclaim .singlecolumn li,
+        .genie .disclaim .singlecolumn p,
+        .genie .disclaim .singlecolumn span {
+          font-size: 9px !important;
+          color: #8a8a8a !important;
+        }
+        .genie .sign .field_sign {
+          font-size: 7px;
+          color: #8a8a8a;
+        }
+        .genie .txtleft + .field_sign {
+          text-align: left;
+        }
+        .genie .txtcenter + .field_sign {
+          text-align: center;
+        }
+        .genie .txtright + .field_sign {
+          text-align: right;
+        }
+        .genie .signPic span:first-child {
+          padding-right: 6px;
+        }
+        .genie .signPic img {
+          max-width: 100%;
+        }
+        .genie .right-box .disclaim,
+        .genie .right-box .sign {
+          border: none;
+        }
+        .genie .disclaim .paragraph:before,
+        .genie .sign .paragraph:before {
+          display: none;
+        }
+  
+        .genie .displayNoneThisField {
+          display: none;
+        } /* Keep this class always at bottom */
+  
+        /*HILT multi para/section - For PDF*/
+        .genie.for-pdf .right-box .multi-para-hilt .pdfparawrapper:after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        .genie.for-pdf
+          .right-box
+          .multi-para-hilt
+          .pdfparawrapper
+          .paragraph:first-child {
+          float: left;
+          margin-left: 0;
+        }
+        .genie.for-pdf
+          .right-box
+          .multi-para-hilt
+          .pdfparawrapper
+          .paragraph:nth-child(2) {
+          float: right;
+          margin-left: 2%;
+          margin-right: 0;
+          clear: none;
+        }
+        .genie.for-pdf .right-box .multi-para-hilt .pdfparawrapper .paragraph {
+          margin-bottom: 12px;
+        }
+        .genie.for-pdf
+          .multi-para-hilt
+          .pdfparawrapper:last-child
+          .paragraph:last-child,
+        .genie.for-pdf
+          .right-box
+          .multi-para-hilt
+          .pdfparawrapper:last-child
+          .paragraph {
+          margin-bottom: 0;
+        }
+        .genie,
+        .genie table {
+          line-height: 13px;
+        }
+        .genie.pagesize {
+          width: "100%";
+        }
+        .genie.fontsize,
+        .genie .lang-sec.infobarsec .paragraph *,
+        .genie .lang-sec.infotilesec .paragraph *,
+        .genie .skli-sec .paragraph * {
+          font-size: 10px;
+        }
+        .genie.fontface {
+          font-family: Saira Semi Condensed;
+        }
+        .genie .section {
+          padding-top: 20px;
+        }
+        .genie .firstparagraph {
+          margin-top: 0 !important;
+        }
+        .genie .paragraph {
+          margin-top: 10px;
+        }
+        .genie .right-box .singlecolumn,
+        .genie .right-box .maincolumn {
+          margin-left: 0px;
+        }
+        .genie table.skills td {
+          padding-top: 7px;
+        }
+        .genie .name {
+          font-size: 30px;
+          line-height: 36px;
+        }
+        .genie .svg-name span {
+          font-size: 60px;
+          line-height: 70px;
+        }
+        .genie ul li:before {
+          font-size: 10px;
+        }
+        .genie .address {
+          font-size: 10px;
+          line-height: 15px;
+        }
+        .genie .address2 {
+          font-size: 10px;
+          line-height: 15px;
+        }
+        .genie .sectiontitle {
+          font-size: 14px;
+          line-height: 16px;
+          color: #0c6ba1;
+        }
+        .genie .left-box,
+        .genie .left-box .firstparagraph,
+        .genie .left-box .paragraph {
+          width: 115px;
+        }
+        .genie .top-container .right-box > .section:first-child:before,
+        .genie
+          .top-container
+          .right-box
+          > .sortable-item:first-child
+          .section:before,
+        .genie .left-box .inner-rating,
+        .genie .inner-rating,
+        .genie .mid-container,
+        .genie .left-box:before,
+        .genie .name-in:before {
+          background: #0c6ba1;
+        }
+        .genie .resume-title {
+          font-size: 12px;
+          line-height: 15px;
+        }
+        .genie .expr-sec .paragraph {
+          margin-top: 15px;
+        }
+        .genie .left-box .heading {
+          max-width: 115px;
+        }
+        .genie .text-field {
+          width: 153px;
+        }
+        .genie .disclaim {
+          margin: 0;
+          padding: 0;
+          padding-top: 50px;
+        }
+  
+        /*HILT multi para*/
+        .genie .right-box .multi-para-hilt {
+          padding-left: 0px;
+        }
+        .genie .right-box .multi-para-hilt .heading {
+          margin-left: -0px;
+        }
+  
+        /*Infographic*/
+        .genie .right-box .lang-sec.infobarsec .paragraph {
+          width: 170px;
+        }
+        .genie .left-box .lang-sec.infobarsec .paragraph {
+          margin-top: 5px;
+        }
+        .genie .right-box .lang-sec.infobarsec {
+          margin-left: 0px;
+        }
+        .genie .inner-rating {
+          background-color: #0c6ba1;
+        }
+        .genie .right-box .sortable-item .lang-sec.infobarsec {
+          margin-left: 0;
+          padding-left: 0px;
+        }
+        .genie .right-box .lang-sec.infobarsec .heading {
+          margin-left: -0px;
+        }
+        .genie .right-box .lang-sec.infobarsec .nativeLangPara {
+          width: 359px;
+          max-width: 359px;
+        }
+  
+        /*Infographic Skills*/
+        .genie .right-box .lang-sec.infotilesec,
+        .genie .right-box .skli-sec {
+          padding-left: 0px;
+        }
+        .genie .right-box .lang-sec.infotilesec .heading,
+        .genie .right-box .skli-sec .heading {
+          margin-left: -0px;
+        }
+        .genie .right-box .lang-sec.infotilesec .paragraph,
+        .genie .right-box .skli-sec .paragraph {
+          width: 170px;
+        }
+        .genie .left-box .lang-sec.infotilesec .paragraph,
+        .genie .left-box .skli-sec .paragraph {
+          padding-bottom: 5px;
+        }
+        .genie .right-box .sortable-item .lang-sec.infotilesec,
+        .genie .right-box .sortable-item .skli-sec {
+          margin-left: 0;
+          padding-left: 0px;
+        }
+        .genie .right-box .lang-sec.infotilesec .nativeLangPara {
+          width: 359px;
+          max-width: 359px;
+        }
+  
+        /*Rectangular Rating Blocks*/
+        .genie .paragraph .sliced-rect .sliced-rect-tile.ratvfill {
+          background-color: #0c6ba1;
+        }
+  
+        /*Builder fixes*/
+        .page-finalize
+          .genie
+          .right-box.dropable-container
+          .lang-sec.infobarsec
+          .sortableInner
+          .sortable-item {
+          display: inline-block;
+        }
+        .page-finalize .genie .left-box,
+        .page-finalize .genie .right-box {
+          position: relative;
+        }
+        .page-finalize .genie .parent-container .left-box:before {
+          content: "";
+          background: #0c6ba1;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          width: 155px;
+        }
+        .page-finalize .genie .data-CNTC.active,
+        .page-finalize .genie .data-CNTC.active .social .field a {
+          color: #000;
+        }
+        .page-finalize .genie .mid-container {
+          padding-left: 30px;
+        }
+        .page-finalize .genie .mid-container .left-box:before {
+          margin-left: 0px;
+        }
+        .genie .mid-container .right-box .sortable-item .section.cntc-sec {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+  
+        @-moz-document url-prefix() {
+          .genie .parent-container {
+            height: 762px;
+          }
+        }
+  
+        /* IE browser css */
+        @media screen and (min-width: 0

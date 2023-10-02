@@ -1,0 +1,400 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Responsive Resume UI Design in HTML and CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    </head>
+      <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    body{
+        background: #c4c4c4;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    .resume_wrapper{
+        display: flex;
+        width: 800px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 10px;
+    }
+    
+    .resume_wrapper .resume_left{
+        width: 35%;
+        background: #26252d;
+    }
+    
+    .resume_wrapper .resume_left .resume_image{
+        width: 100%;
+    }
+    
+    .resume_wrapper .resume_left .resume_image img{
+        width: 100%;
+        display: block;
+    }
+    
+    .resume_wrapper .resume_title{
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 10px;
+        letter-spacing: 4px;
+    }
+    
+    .resume_wrapper .resume_left .resume_info{
+        color: #84838b;
+    }
+    
+    .resume_wrapper .resume_left .resume_bottom{
+        padding: 20px 30px;
+    }
+    
+    .resume_wrapper .resume_item{
+        padding: 20px 0;
+        border-bottom: 1px solid #0175b2;
+    }
+    
+    .resume_wrapper  .resume_item:last-child{
+        border-bottom: 0;
+    }
+    
+    .resume_wrapper .resume_left .resume_namerole{
+        display: none;
+    }
+    
+    .resume_wrapper .resume_namerole .name{
+        font-size: 20px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 5px;
+        letter-spacing: 4px;
+    }
+    
+    .resume_wrapper .resume_left .resume_namerole .role{
+        color: #84838b;
+    }
+    
+    .resume_wrapper .resume_left .resume_contact .resume_info:last-child{
+         margin-top: 10px;
+    }
+    
+    .resume_wrapper .resume_left .resume_contact .resume_subtitle{
+        color: #fff;
+        margin-bottom: 2px;
+    }
+    
+    .resume_wrapper .resume_left .resume_skills .skills_list{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+    
+    .resume_wrapper .resume_left .resume_skills .skills_list .skills_bar p{
+        position: relative;
+        width: 125px;
+        height: 20px;
+        background: #fff;
+    }
+    
+    .resume_wrapper .resume_left .resume_skills .skills_list .skills_bar p span{	
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #0175b2;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .resume_wrapper .resume_right{
+        width: 65%;
+        padding: 20px 40px;
+        color: #26252d;
+    }
+    
+    .resume_wrapper .resume_right .resume_namerole .name{
+        color: #26252d;
+        font-size: 32px;
+    }
+    
+    .resume_wrapper .resume_right .resume_namerole .role{
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+    
+    .resume_wrapper .resume_right .resume_item .resume_title{
+        color: #26252d;
+    }
+    
+    .resume_wrapper .resume_right .resume_data{
+        display: flex;
+    }
+    
+    .resume_wrapper .resume_right .resume_data .year{
+        padding-right: 35px;
+        width: 115px;
+        position: relative;
+    }
+    
+    .resume_wrapper .resume_right .resume_data .content{
+        padding-left: 35px;
+        margin-bottom: 20px;
+        width: calc(100% - 115px);
+    }
+    
+    .resume_wrapper .resume_right .resume_data .year:before{
+        content: "";
+        position: absolute;
+        top: 5px;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        background: #fff;
+        border: 1px solid #26252d;
+        border-radius: 50%;
+    }
+    
+    .resume_wrapper .resume_right .resume_data .year:after{
+        content: "";
+        position: absolute;
+        top: 17px;
+        right: 4px;
+        width: 3px;
+        height: 90%;
+        background: #0175b2;
+    }
+    
+    .resume_wrapper .resume_right .resume_data:last-child .year:after{
+        display: none;
+    }
+    
+    .resume_wrapper .resume_right .resmue_interests .resume_info{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+    }
+    
+    .resume_wrapper .resume_right .resmue_interests .interests .int_icon{
+        font-size: 38px;
+        color: #0175b2;
+        margin-bottom: 10px;
+    }
+    
+    
+    @media screen and (max-width: 800px){
+        .resume_wrapper .resume_right .resume_namerole{
+            display: none;
+        }
+        .resume_wrapper .resume_left .resume_namerole{
+            display: block;
+        }
+        .resume_wrapper{
+            width: 95%;
+            margin: 10px auto;
+            flex-direction: column;
+        }
+        .resume_wrapper .resume_left,
+        .resume_wrapper .resume_right{
+            width: 100%;
+        }
+    }
+    
+    @media screen and (max-width: 424px){
+        .resume_wrapper .resume_right{
+            padding: 20px 30px;
+        }
+        .resume_wrapper .resume_right .resume_data{
+            flex-direction: column;
+        }
+        .resume_wrapper .resume_right .resume_data .year{
+            padding: 0;
+            margin-bottom: 5px;
+            width: 100%;
+            color: #0175b2;
+        }
+        .resume_wrapper .resume_right .resume_data .year:before,
+        .resume_wrapper .resume_right .resume_data .year:after{
+            display: none;
+        }
+        .resume_wrapper .resume_right .resume_data .content{
+            width: 100%;
+            padding: 0;
+        }
+        .resume_wrapper .resume_right .resmue_interests .interests .int_icon{
+            font-size: 24px;
+        }
+    }
+      </style>
+    <body>
+    
+    <div class="resume_wrapper">
+        <div class="resume_left">
+    
+            <div class="resume_bottom">
+                <div class="resume_item resume_namerole">
+                    <div class="name">Eli Sukhvir</div>
+                    <div class="role">iOS Developer</div>
+                </div>
+                <div class="resume_item resume_profile">
+                    <div class="resume_title">Profile</div>
+                    <div class="resume_info">Entry point doesn't exist neither at index.js nor index.ios.js. Skip prewarming.</div>
+                </div>
+                <div class="resume_item resume_address">
+                    <div class="resume_title">Address</div>
+                    <div class="resume_info">
+                    Peshawar ,
+                   Pakistan
+                    </div>
+                </div>
+                <div class="resume_item resume_contact">
+                    <div class="resume_title">Contact</div>
+                    <div class="resume_info">
+                        <div class="resume_subtitle">Phone</div>
+                        <div class="resume_subinfo">03328011990</div>
+                    </div>
+                    <div class="resume_info">
+                        <div class="resume_subtitle">Email</div>
+                        <div class="resume_subinfo">Eli@gmail.com</div>
+                    </div>
+                </div>
+                <div class="resume_item resume_skills">
+                    <div class="resume_title">Skills</div>
+                    <div class="resume_info">
+                        <div class="skills_list">
+                            <div class="skills_left"><p>JavaScript</p>
+        <div class="skills_bar">
+        <p>
+        <span style="width: 90%"></span>
+        </p>
+       </div><p>Swift</p>
+        <div class="skills_bar">
+        <p>
+        <span style="width: 90%"></span>
+        </p>
+       </div><p>React Native</p>
+        <div class="skills_bar">
+        <p>
+        <span style="width: 90%"></span>
+        </p>
+       </div></div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="resume_right">
+            <div class="resume_item resume_namerole">
+                <div class="name">Eli Sukhvir</div>
+                <div class="role">iOS Developer</div>
+            </div>
+            <div class="resume_item resume_education">
+                <div class="resume_title">Education</div>
+                <div class="resume_info">
+                    <div class="resume_data">
+<div class="year">2006 - 2010</div>
+<div class="content">
+    <p><b>University of Peshawar</b></p>
+    <p>BS Software Engineering</p>
+    <p></p>
+</div>
+</div>
+                   
+                </div>
+            </div>
+            <div class="resume_item resume_education">
+        <div class="resume_title">Certificate</div>
+        <div class="resume_info">
+            <div class="resume_data">
+       <div class="year">10 - 2010</div>
+       <div class="content">
+           <p><b>Company Peshawar</b></p>
+           <p>BS Software Engineering</p>
+         
+       </div>
+       </div>
+        
+         </div>
+         </div>
+            <div class="resume_item resume_education">
+        <div class="resume_title">Awards</div>
+        <div class="resume_info">
+            <div class="resume_data">
+       <div class="year">2010</div>
+       <div class="content">
+           <p><b>Company Peshawar</b></p>
+           <p>BS Software Engineering</p>
+         
+       </div>
+       </div>
+        
+         </div>
+         </div>
+            <div class="resume_item resume_education">
+        <div class="resume_title">Reference</div>
+        <div class="resume_info">
+            <div class="resume_data">
+       <div class="year"></div>
+       <div class="content">
+           <p><b>CompanyPeshawar</b></p>
+           <p>BS Software Engineering</p>
+         
+       </div>
+       </div>
+        
+         </div>
+         </div>
+            <div class="resume_item resume_experience">
+                <div class="resume_title">Experience</div>
+                <div class="resume_info">
+                    <div class="resume_data">
+        <div class="year">12 - 2012 / 12 - 2022</div>
+        <div class="content">
+            <p><b>Senior Software Engineer</b></p>
+            <p>Coeus Solutions</p>
+            <p></p><p>I am looking for large text files for testing the compression and decompression in all sizes from 1kb to 100mb. Can someone please refer me to download it from some link.</p><p>Arbitrarily large text files can be generated on Linux with the following command.</p><p>Um, no, not at all what you want for testing the effectiveness of your compressor. The resulting text is highly repetitive, and does not represent what a compressor will see in the real world. Do not use this answer. See the compression corpora in the other answers.</p><p>This is a test roles for your job.</p>
+            
+        </div>
+    </div><div class="resume_data">
+        <div class="year">01 - 2023 /  - </div>
+        <div class="content">
+            <p><b>Online Art Tutor</b></p>
+            <p>Genie Devs</p>
+            <p></p><p>You can download enwik8 and enwik9 from here. They are respectively 100,000,000 and 1,000,000,000 bytes of text for compression benchmarks. You can always pull subsets of those for smaller tests.</p><p>Project Gutenberg looks exceptionally promising for this purpose. This resource contains thousands of books in many formats. Here is a sample of what is available.</p><p>Delete it, or replace it with a different answer. Lorem ipsum is no help here.</p><p>It's obvious to me from what I see in your answer history, that you know what you're talking about, so respectfully, I'm quite interested in any explanation you would have to offer.</p>
+            
+        </div>
+    </div>
+                        
+                </div>
+            </div>
+            <div class="resume_item resmue_interests">
+                <div class="resume_title">Interests</div>
+                <div class="resume_info">
+                    <div class="interests">
+                        <div class="int_icon">
+                            <i class="fas fa-volleyball-ball"></i>
+                        </div>
+                        <div class="int_data"><p>Painting</p><p>Gardening</p><p>Coding</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </body>
+    </html>

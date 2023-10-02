@@ -1,0 +1,345 @@
+ 
+<html>
+<head>
+    <title>Resume of First Last</title>
+    <meta charset="UTF-8">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+  <style>
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i");
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+:root {
+  background-color: #EFEFEF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; }
+
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw; }
+
+#document {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: white;
+  margin: auto;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3); }
+
+.page {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 10in;
+  width: 7.1in;
+  align-items: stretch;
+  justify-content: stretch; }
+
+.page-break {
+  display: none; }
+
+.about-me {
+  text-align: center; }
+  .about-me .about-me__name {
+    font-weight: 100;
+    font-size: 3em; }
+    .about-me .about-me__name .about-me__last-name {
+      font-weight: 700; }
+  .about-me h6 {
+    font-size: 0.8em;
+    line-height: 1.4em; }
+  .about-me .about-me__position {
+    margin-top: 0.5em;
+    color: #DD3D2A;
+    font-family: 'Source Sans Pro';
+    font-variant: small-caps;
+    font-size: 0.9333rem; }
+  .about-me .about-me__address {
+    font-weight: 500;
+    font-style: italic;
+    color: #999999; }
+  .about-me .about-me__social > h6 {
+    display: inline; }
+    .about-me .about-me__social > h6 a {
+      text-decoration: none;
+      color: black; }
+      .about-me .about-me__social > h6 a > svg {
+        margin-right: 0.4em; }
+    .about-me .about-me__social > h6:not(:last-child)::after {
+      content: '|';
+      margin-left: 0.75em;
+      margin-right: 0.5em; }
+
+section {
+  width: 100%;
+  margin-top: 1rem;
+  font-family: 'Source Sans Pro'; }
+  section .section__heading {
+    color: #DD3D2A;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 0.7em;
+    display: flex;
+    flex-direction: row; }
+    section .section__heading span.section__heading-underline {
+      flex-grow: 1;
+      border-bottom: 2px solid #999999;
+      margin-bottom: 4px;
+      margin-left: 0.3em; }
+  section .section__item {
+    margin-bottom: 0.5rem; }
+    section .section__item > div {
+      width: 100%; }
+      section .section__item > div:not(:first-child) {
+        margin-top: 0.3rem; }
+      section .section__item > div > * {
+        display: inline; }
+      section .section__item > div > *:last-child {
+        float: right; }
+      section .section__item > div .section__subheading {
+        font-weight: 600; }
+      section .section__item > div .section__location {
+        color: #DD3D2A;
+        font-size: 0.9rem;
+        font-style: italic; }
+      section .section__item > div .section__subsubheading {
+        font-size: 0.9rem;
+        font-weight: 500;
+        font-variant: small-caps;
+        color: #5D5D5D; }
+      section .section__item > div .section__date-range {
+        font-size: 0.9rem;
+        font-weight: 500;
+        font-style: italic; }
+  section ul {
+    margin-left: 1.1rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.1em; }
+    section ul li {
+      font-size: 0.9rem; }
+    section ul li:not(:last-child) {
+      margin-bottom: 0.2rem; }
+  section ul, section table {
+    font-size: 0.9rem;
+    color: #333333; }
+
+.skills table tr td:first-child {
+  width: 11em;
+  text-align: right;
+  font-weight: bold;
+  font-size: 1rem;
+  padding-right: 0.8em; }
+
+.skills table tr {
+  line-height: 1.3em; }
+
+.skills .skills__list span:not(:last-child)::after {
+  content: ', '; }
+.userSummary{
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+footer {
+  margin-top: auto;
+  position: relative;
+  top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 0.75em;
+  font-variant: small-caps; }
+
+@media print {
+  body {
+    overflow: visible; }
+  :root #document {
+    float: none;
+    display: block;
+    width: unset;
+    height: unset;
+    padding: 0;
+    box-shadow: none; }
+  .page-break {
+    display: block;
+    page-break-before: always;
+    flex: 1; }
+  @page {
+    size: letter portrait;
+    margin: 0.5in 0.7in; } }
+
+  </style>
+<body>
+  <div id="document">
+    <div class="page">
+      <header class="about-me">
+        <h1 class="about-me__name">Eli<span class="about-me__last-name">Sukhvir</span></h1>
+        <h6 class="about-me__position">iOS Developer</h6>
+        <h6 class="about-me__address">Address</h6>
+        <span class="about-me__social">
+            <h6><a href="tel:12345678910"><i class="fa fa-phone"></i>03328011990</a></h6>
+            <h6><a href="mailto:mail@firstlast.me"><i class="fa fa-envelope"></i>Eli@gmail.com</a></h6>
+            <h6><a href=""><i class="fab fa-github"></i>Peshawar</a></h6>
+            <h6><a href=""><i class="fab fa-codepen"></i>Pakistan</a></h6>
+            <p class="userSummary">Entry point doesn't exist neither at index.js nor index.ios.js. Skip prewarming</p>
+        </span>
+      </header>
+      
+      <section class="experience">
+          <div class="section__heading">
+              <h1>Experience</h1>
+              <span class="section__heading-underline"></span>
+          </div>
+           <div class="section__item">
+<div>
+    <h4 class="education__institution section__subheading">Coeus Solutions</h4>
+    <h4 class="section__location"></h4>
+</div>
+<div>
+    <h5 class="section__subsubheading">Senior Software Engineer</h5>
+    <h5 class="section__date-range">12 / 2012 - 12 / 2022</h5>
+</div>
+<ul><li>I am looking for large text files for testing the compression and decompression in all sizes from 1kb to 100mb. Can someone please refer me to download it from some link.</li><li>Arbitrarily large text files can be generated on Linux with the following command.</li><li>Um, no, not at all what you want for testing the effectiveness of your compressor. The resulting text is highly repetitive, and does not represent what a compressor will see in the real world. Do not use this answer. See the compression corpora in the other answers.</li><li>This is a test roles for your job.</li>
+</ul>
+</div><div class="section__item">
+<div>
+    <h4 class="education__institution section__subheading">Genie Devs</h4>
+    <h4 class="section__location"></h4>
+</div>
+<div>
+    <h5 class="section__subsubheading">Online Art Tutor</h5>
+    <h5 class="section__date-range">01 / 2023 -  / </h5>
+</div>
+<ul><li>You can download enwik8 and enwik9 from here. They are respectively 100,000,000 and 1,000,000,000 bytes of text for compression benchmarks. You can always pull subsets of those for smaller tests.</li><li>Project Gutenberg looks exceptionally promising for this purpose. This resource contains thousands of books in many formats. Here is a sample of what is available.</li><li>Delete it, or replace it with a different answer. Lorem ipsum is no help here.</li><li>It's obvious to me from what I see in your answer history, that you know what you're talking about, so respectfully, I'm quite interested in any explanation you would have to offer.</li>
+</ul>
+</div>
+      </section>
+      <section class="education">
+        <div class="section__heading">
+          <h1>Education</h1>
+          <span class="section__heading-underline"></span>
+        </div>
+         <div class="section__item">
+<div>
+  <h4 class="education__institution section__subheading">University of Peshawar</h4>
+  <h4 class="section__location"></h4>
+</div>
+<div>
+  <h5 class="section__subsubheading">BS Software Engineering</h5>
+  <h5 class="section__date-range">10 / 2006 - 10 / 2010</h5>
+</div>
+</div>
+      </section>
+      
+      
+        <section class="education">
+        <div class="section__heading">
+          <h1>Certificate</h1>
+          <span class="section__heading-underline"></span>
+        </div>
+             <div class="section__item">
+           <div>
+             <h4 class="education__institution section__subheading">Company Peshawar</h4>
+             <h5 class="section__subsubheading">BS Software Engineering</h5>
+           </div>
+           <div>
+             
+             <h5 class="section__date-range">10 - 2010</h5>
+           </div>
+           </div>
+              </section>
+      
+        <section class="education">
+        <div class="section__heading">
+          <h1>Awards</h1>
+          <span class="section__heading-underline"></span>
+        </div>
+             <div class="section__item">
+           <div>
+             <h4 class="education__institution section__subheading">Company Peshawar</h4>
+             <h5 class="section__subsubheading">BS Software Engineering</h5>
+           </div>
+           <div>
+             
+             <h5 class="section__date-range">2010</h5>
+           </div>
+           </div>
+              </section>
+      
+        <section class="education">
+        <div class="section__heading">
+          <h1>Reference</h1>
+          <span class="section__heading-underline"></span>
+        </div>
+             <div class="section__item">
+           <div>
+             <h4 class="education__institution section__subheading">CompanyPeshawar</h4>
+             <h5 class="section__subsubheading">BS Software Engineering</h5>
+           </div>
+           <div>
+             
+           </div>
+           </div>
+              </section>
+
+      <section class="skills">
+        <div class="section__heading">
+            <h1>Skills</h1>
+            <span class="section__heading-underline"></span>
+        </div>
+        <table>
+          <tr>
+              <td class="skills__heading"></td>
+              <td class="skills__list"> <span><p>JavaScript</p><p>Swift</p><p>React Native</p></span></td>
+          </tr>
+         
+        </table>
+      </section>
+      <section class="skills">
+        <div class="section__heading">
+            <h1>Hobbies</h1>
+            <span class="section__heading-underline"></span>
+        </div>
+        <table>
+          <tr>
+              <td class="skills__heading"></td>
+              <td class="skills__list"> <span><p>Painting</p><p>Gardening</p><p>Coding</p></span></td>
+          </tr>
+         
+        </table>
+      </section>
+
+      
+    </div>
+  </div>
+</body>
+</html>

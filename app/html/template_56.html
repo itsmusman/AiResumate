@@ -1,0 +1,445 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML & CSS Resume Template</title>
+    
+        <!-- Google font  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    
+        <!-- font-awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+      <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    body {
+        background-color: #AED6F1;
+    }
+    
+    .resume-contents {
+        min-height: 100vh;
+        width: 80%;
+        margin: 2rem auto;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+    }
+    
+    .left-section {
+        grid-column: span 2;
+        height: 100%;
+        background-color: #34495E;
+    }
+    
+    .right-section {
+        grid-column: span 5;
+        height: 100%;
+        background-color: #D6DBDF;
+    }
+    
+    .left-section-contents{
+        padding: 2rem 2rem;
+    }
+    
+    .profile {
+        width: 100%;
+        border-bottom: 2px solid #1B2631;
+    }
+    
+    .profile .profile-image {
+        width: 100%;
+        border-radius: 50%;
+        border: 8px solid #1B2631;
+    }
+    
+    .name {
+        color: #D6DBDF;
+        font-size: 30px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+        padding: 1rem 0;
+    }
+    
+    .profession {
+        color: #F9E79F;
+        font-size: 20px;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+        font-weight: bold;
+        padding-bottom: 1rem;
+    }
+    
+    /* .contact-info { border-bottom: 2px solid #1B2631; } */
+    .left-title {
+        color: #D6DBDF;
+        font-size: 20px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        padding-top: 3rem;
+    }
+    
+    .contact-info ul {
+        padding-top: 1.5rem;
+    }
+    
+    .contact-info ul li,
+    .references ul li {
+        padding: .4rem 0;
+        display: flex;
+        align-items: center;
+        color: #d6dbdfaf;
+        letter-spacing: 1px;
+        font-size: 18px;
+    }
+    
+    .contact-info ul li i,
+    .references ul li i {
+        padding-right: 1rem;
+        font-size: 18px;
+        color: #2E86C1;
+    }
+    
+    .skills ul {
+        padding-top: 1.5rem;
+    }
+    .skills ul li p {
+        padding: .4rem 0;
+        color: #d6dbdfaf;
+        font-size: 18px;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+    }
+    
+    .referance-name {
+        padding-top: 1.5rem;
+        padding-bottom: .4rem;
+        font-size: 18px;
+        color: #F9E79F;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    
+    .referance-profession {
+        font-size: 16px;
+        color: #d6dbdfaf;
+        letter-spacing: 1px;
+        /* text-transform: uppercase; */
+        padding-bottom: .4rem;
+    }
+    
+    
+    .right-section-contents {
+        padding: 2rem 2rem;
+    }
+    
+    .right-title {
+        color: #34495E;
+        font-size: 40px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        padding: 2rem 0;
+        position: relative;
+    }
+    
+    .gap {
+        padding-bottom: 2rem;
+    }
+    .about-me-contents {
+        font-size: 18px;
+        letter-spacing: 1px;
+        line-height: 2rem;
+    }
+    
+    .experience-contents,
+    .education-contents,
+    .awards-contents {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 2rem;
+    }
+    
+    .exp-company-name,
+    .education-school-name,
+    .awards-company-name {
+        font-size: 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #21638f;
+        padding-bottom: .4rem;
+    }
+    
+    .exp-time-period,
+    .educationp-time-period,
+    .awards-time-period {
+        font-size: 18px;
+        letter-spacing: 1px;
+        line-height: 2rem;
+    }
+    
+    .exp-position,
+    .education-subject,
+    .awards-name {
+        font-size: 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #2E86C1;
+        padding-bottom: .4rem;
+    }
+    
+    .exp-desc,
+    .education-desc,
+    .awards-desc {
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 1.5rem;
+        border-left: 3px solid #a5a3a3;
+        padding-left: 5px;
+    }
+    
+    /* Media queries */
+    @media screen and (max-width:780px) {
+        .experience-contents,
+        .education-contents,
+        .awards-contents {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    
+    @media screen and (max-width:780px) {
+        .left-section {
+            grid-column: span 3;
+        }
+        
+        .right-section {
+            grid-column: span 4;
+        }
+        
+    }
+    
+    @media screen and (max-width:1200px) {
+        .resume-contents {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    
+    @media screen and (max-width:390px) {
+        .resume-contents {
+            width: 100%;
+            margin: 0 auto;
+        }
+    
+        .name {
+            font-size: 20px;
+        }
+    
+        .profession {
+            font-size: 18px;
+        }
+    
+        .left-title {
+            font-size: 18px;
+        }
+    
+        .right-title {
+            font-size: 18px;
+        }
+    
+        .contact-info ul li,
+        .references ul li {
+            font-size: 12px;
+        }
+    
+        .contact-info ul li i,
+        .references ul li i {
+            /* padding-right: 1rem; */
+            font-size: 12px;
+        }
+    
+        .skills ul li p {
+            font-size: 12px;
+        }
+    
+        .about-me-contents {
+            font-size: 16px;
+            line-height: 1.5rem;
+        }
+    
+        .exp-company-name,
+        .education-school-name,
+        .awards-company-name {
+            font-size: 18px;
+        }
+    
+        .exp-time-period,
+        .educationp-time-period,
+        .awards-time-period {
+            font-size: 16px;
+        }
+    
+        .exp-position,
+        .education-subject,
+        .awards-name {
+            font-size: 18px;
+        }
+    }
+    
+      </style>
+    <body>
+        <main class="resume-contents">
+            <section class="left-section">
+                <div class="left-section-contents">
+                    <div class="profile">
+                      
+                        <p class="name">Eli Sukhvir</p>
+                        <p class="profession">iOS Developer</p>
+                    </div>
+                    <div class="contact-info">
+                        <p class="left-title">Contact Info</p>
+                        <ul>
+                            <li><i class="fa fa-phone"></i>03328011990
+                            </li>
+                            <li><i class="fa fa-envelope"></i>Eli@gmail.com
+                            </li>
+                            <li><i class="fa fa-globe"></i>www.geniedevs.com
+                            </li>
+                            <li><i class="fa fa-map-marker"></i>Peshawar, Pakistan
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="skills">
+                        <p class="left-title">Skills</p>
+                        <ul>
+                            <li><p>JavaScript</p></li><li><p>Swift</p></li><li><p>React Native</p></li>
+                        </ul>
+                    </div>
+                    <div class="skills">
+                        <p class="left-title">Hobbies</p>
+                        <ul>
+                            <li><p>Painting</p></li><li><p>Gardening</p></li><li><p>Coding</p></li>
+                        </ul>
+                    </div>
+    
+                    </div>
+                </div>
+            </section>
+    
+            <section class="right-section">
+                <div class="right-section-contents">
+                    <section class="about gap">
+                        <div class="right-title">About Me</div>
+                        <p class="about-me-contents">
+                        Entry point doesn't exist neither at index.js nor index.ios.js. Skip prewarming
+                        </p>
+                    </section>
+    
+                    <section class="experience gap">
+                        <div class="right-title">Experience</div>
+                        <div class="experience-contents">
+                            <div class="exp-left">
+<p class="exp-company-name">Coeus Solutions</p><span></span><p></p>
+<p class="exp-time-period">12 / 2012-12 / 2022</p>
+</div>
+<div class="exp-right">
+<p class="exp-position">Senior Software Engineer</p>
+<p class="exp-desc"><li>I am looking for large text files for testing the compression and decompression in all sizes from 1kb to 100mb. Can someone please refer me to download it from some link.</li><li>Arbitrarily large text files can be generated on Linux with the following command.</li><li>Um, no, not at all what you want for testing the effectiveness of your compressor. The resulting text is highly repetitive, and does not represent what a compressor will see in the real world. Do not use this answer. See the compression corpora in the other answers.</li><li>This is a test roles for your job.</li>
+
+</p>
+</div> <div class="exp-left">
+<p class="exp-company-name">Genie Devs</p><span></span><p></p>
+<p class="exp-time-period">01 / 2023- / </p>
+</div>
+<div class="exp-right">
+<p class="exp-position">Online Art Tutor</p>
+<p class="exp-desc"><li>You can download enwik8 and enwik9 from here. They are respectively 100,000,000 and 1,000,000,000 bytes of text for compression benchmarks. You can always pull subsets of those for smaller tests.</li><li>Project Gutenberg looks exceptionally promising for this purpose. This resource contains thousands of books in many formats. Here is a sample of what is available.</li><li>Delete it, or replace it with a different answer. Lorem ipsum is no help here.</li><li>It's obvious to me from what I see in your answer history, that you know what you're talking about, so respectfully, I'm quite interested in any explanation you would have to offer.</li>
+
+</p>
+</div>
+                        </div>
+                       
+                        
+                    </section>
+    
+                    <section class="education gap">
+                        <div class="right-title">Education</div>
+                        <div class="education-contents">
+                            <div class="education-left">
+<p class="education-school-name">University of Peshawar</p>
+<p class="educationp-time-period">2006-2010</p>
+</div>
+<div class="education-right">
+<p class="education-subject">BS Software Engineering</p>
+<p class="education-desc">
+
+</p>
+</div>
+                        </div>
+
+                    </section>
+                    <section class="awards gap">
+        <div class="right-title">Certificates</div>
+        <div class="awards-contents">
+            <div class="education-left">
+                <p class="education-school-name">Company Peshawar</p>
+                <p class="educationp-time-period">10 - 2010</p>
+                </div>
+                <div class="education-right">
+                <p class="education-subject"> BS Software Engineering</p>
+                </div>
+           </div>
+           </section>
+                    <section class="awards gap">
+        <div class="right-title">Awards</div>
+        <div class="awards-contents">
+            <div class="education-left">
+                <p class="education-school-name">Company Peshawar</p>
+                <p class="educationp-time-period">2010</p>
+                </div>
+                <div class="education-right">
+                <p class="education-subject"> BS Software Engineering</p>
+                </div>
+           </div>
+           </section>
+                    <section class="awards gap">
+        <div class="right-title">Reference</div>
+        <div class="awards-contents">
+            <div class="education-left">
+                <p class="education-school-name">CompanyPeshawar</p>
+                </div>
+                <div class="education-right">
+                <p class="education-subject"> BS Software Engineering</p>
+                </div>
+           </div>
+           </section>
+                   
+                </div>
+            </section>
+        </main>
+    </body>
+    </html> 

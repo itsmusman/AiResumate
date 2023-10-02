@@ -1,0 +1,651 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: auto;
+      }
+      .genie-mjs5 ol,
+      .genie-mjs5 ul {
+        list-style: none;
+      }
+      .genie-mjs5 table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-size: inherit;
+        color: inherit;
+        width: 100%;
+      }
+      .genie-mjs5 ul,
+      .genie-mjs5 li {
+        margin: 0;
+        padding: 0;
+        list-style-type: disc;
+      }
+      .genie-mjs5 ul li {
+        margin: 0 0 0 16px;
+        padding: 0;
+      }
+
+      .genie-mjs5 span.padded-line {
+        display: block;
+      }
+      .genie-mjs5 span.job-title,
+      .genie-mjs5 span.degree,
+      .genie-mjs5 span.program-line {
+        font-weight: bold;
+      }
+      .genie-mjs5 .pb5 {
+        padding-bottom: 5px;
+      }
+      .genie-mjs5 span.dates_wrapper {
+        font-weight: bold;
+        display: block;
+        float: left;
+        text-align: left;
+        padding-right: 10px;
+        box-sizing: border-box;
+      }
+      .genie-mjs5 .txtItalics {
+        font-style: italic;
+      }
+      .genie-mjs5 .txtBold {
+        font-weight: bold;
+      }
+
+      .genie-mjs5 {
+        box-sizing: border-box;
+        word-wrap: break-word;
+      }
+      .genie-mjs5 .nameSec {
+        padding-top: 24px !important;
+      }
+      .genie-mjs5 .name {
+        color: #fff;
+        font-size: 15px;
+        line-height: 17px;
+        font-weight: bold;
+        padding: 0;
+        text-align: left;
+        position: relative;
+        z-index: 2;
+      }
+      .genie-mjs5 .name .fName {
+        font-weight: normal;
+      }
+      .genie-mjs5 .paragraph {
+        position: relative;
+        clear: both;
+      }
+      .genie-mjs5 .heading {
+        clear: both;
+        color: #373d48;
+        font-weight: bold;
+      }
+      .genie-mjs5 .address {
+        color: #fff;
+        text-align: left;
+        font-size: 0.917em;
+        line-height: 1.25em;
+        margin-top: 0;
+        white-space: nowrap;
+        position: relative;
+        z-index: 2;
+      }
+      .genie-mjs5 .address .txtBold {
+        margin-right: 3px;
+      }
+      .genie-mjs5 .addressLeft,
+      .genie-mjs5 .addressRight {
+        width: 49%;
+        padding: 0 1% 0 0;
+        white-space: normal;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .genie-mjs5 .addressRight {
+        padding: 0 0 0 1%;
+      }
+      .genie-mjs5 .table_wrapper {
+        width: 100%;
+        margin-top: 0;
+      }
+      .genie-mjs5 table.twocol td {
+        width: 50%;
+      }
+      .genie-mjs5 table.skills {
+        width: 100%;
+      }
+      .genie-mjs5 table.skills th,
+      .genie-mjs5 table.skills td {
+        width: 20%;
+        text-align: center;
+      }
+      .genie-mjs5 table.skills th {
+        text-decoration: underline;
+      }
+      .genie-mjs5 table.skills .skill-name,
+      .genie-mjs5 table.skills .skill-rating {
+        text-align: left;
+        width: 35%;
+      }
+      .genie-mjs5 table.skills .skill-rating {
+        width: 20%;
+      }
+      .genie-mjs5 table.skills .skill-years,
+      .genie-mjs5 table.skills .skill-last {
+        width: 19%;
+      }
+      .genie-mjs5 table.skills .pad1 {
+        width: 5%;
+      }
+      .genie-mjs5 table.skills .pad2,
+      .genie-mjs5 table.skills .pad3 {
+        width: 1%;
+      }
+      .genie-mjs5 .resumeTitle {
+        text-align: left;
+        color: #fff !important;
+        z-index: 2;
+        position: relative;
+        font-weight: 400;
+      }
+      .genie-mjs5 td.twocol_2 {
+        border-left: 1px solid #fefdfd;
+      }
+
+      .genie-mjs5 .nameSec,
+      .genie-mjs5 .SECTION_CNTC {
+        position: relative;
+      }
+      .genie-mjs5 .nameSec:before,
+      .genie-mjs5 .SECTION_CNTC:before {
+        background: #373d48;
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+      }
+
+      .genie-mjs5 .section {
+        border-left: 1px solid #d7d7d7;
+        padding-left: 25px;
+        margin-left: 12px;
+        position: relative;
+      }
+      .genie-mjs5 .summary {
+        border: none;
+        margin-left: 0;
+        padding-left: 0;
+      }
+      .genie-mjs5 .first-section,
+      .genie-mjs5 .SECTION_CNTC {
+        border: none;
+      }
+      .genie-mjs5 .first-section {
+        padding-bottom: 0;
+      }
+      .genie-mjs5 .heading,
+      .genie-mjs5 .single-column {
+        position: relative;
+      }
+      .genie-mjs5 .single-column:before {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -30px;
+        content: "";
+        height: 9px;
+        width: 9px;
+        border: 0;
+        background: #373d48;
+        z-index: 2;
+        transform: rotate(45deg);
+      }
+      .genie-mjs5 .summary .single-column:before {
+        display: none;
+      }
+      .genie-mjs5 .section.notdraggable + .section:not(.notdraggable):before {
+        border: 3px solid #fff;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -2px;
+      }
+      .genie-mjs5 .paragraph + tr.paragraph:before {
+        display: none;
+      }
+      .genie-mjs5 .notdraggable {
+        border: 0;
+      }
+
+      .genie-mjs5 .headingIcon {
+        left: -45px;
+        top: -7px;
+        position: absolute;
+      }
+      .genie-mjs5 .headingIcon svg {
+        height: 40px;
+        width: 40px;
+        position: relative;
+      }
+
+      .genie-mjs5 .headingIcon svg rect {
+        transform: rotate(45deg);
+        fill: #373d48;
+      }
+      .genie-mjs5 .headingIcon svg path {
+        fill: #fff;
+      }
+      .genie-mjs5 .ratingRect {
+        float: right;
+        text-align: right;
+      }
+      .genie-mjs5 .ratingRect .noLnht {
+        line-height: 0;
+      }
+      .genie-mjs5 .ratingRect svg rect {
+        transform: rotate(45deg);
+      }
+      .genie-mjs5 .ratingfield p {
+        display: inline;
+      }
+
+      .genie-mjs5 .sortable-item .nameSec,
+      .genie-mjs5 .sortable-item .SECTION_CNTC {
+        padding-bottom: 0;
+      }
+      .genie-mjs5 .sortable-item .summary {
+        margin-left: 0;
+        padding-left: 0;
+      }
+      .genie-mjs5 .ratingRect .default-fill {
+        fill: #373d48;
+      }
+      .genie-mjs5 .sortable-item .rating-wrapper span {
+        top: 0;
+      }
+      .genie-mjs5 .sortableInner .ratingfield {
+        vertical-align: top;
+      }
+      .genie-mjs5 .sortableInner .sortable-item .single-column {
+        line-height: normal;
+      }
+      .genie-mjs5,
+      .genie-mjs5 table {
+        line-height: 16px;
+      }
+      .genie-mjs5.pagesize {
+        width: 792px;
+      }
+      .genie-mjs5.fontsize {
+        font-size: 11px;
+      }
+      .genie-mjs5.font-face {
+        font-family: "Century Gothic", Helvetica, sans-serif;
+      }
+      .genie-mjs5.vmargins {
+        padding-bottom: 24px;
+      }
+      .genie-mjs5.hmargins {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .genie-mjs5 .section {
+        padding-top: 20px;
+      }
+      .genie-mjs5 .heading {
+        padding-bottom: 10px;
+        color: #373d48;
+      }
+      .genie-mjs5 .job-title,
+      .genie-mjs5 span.degree,
+      .genie-mjs5 span.program-line {
+        font-size: 14px;
+      }
+      .genie-mjs5 .paragraph {
+        padding-top: 10px;
+      }
+      .genie-mjs5 .SECTION_CNTC,
+      .genie-mjs5 .first-paragraph {
+        padding-top: 0 !important;
+      }
+      .genie-mjs5 .first-paragraph .single-column.main-column,
+      .genie-mjs5 .single-column.paragraphindent {
+        margin-left: 0;
+      }
+      .genie-mjs5 .single-column,
+      .genie-mjs5 .main-column {
+        margin-left: 70px;
+      }
+      .genie-mjs5 span.dates_wrapper {
+        width: 70px;
+        font-size: 11px;
+        line-height: 17px;
+      }
+      .genie-mjs5 .section-title,
+      .genie-mjs5 .resumeTitle {
+        font-size: 16px;
+        line-height: 21px;
+      }
+      .genie-mjs5 .name {
+        font-size: 36px;
+        line-height: 46px;
+      }
+      .genie-mjs5 .address {
+        font-size: 11px;
+        line-height: 21px;
+        padding-top: 10px;
+        padding-bottom: 15px;
+      }
+      .genie-mjs5 table.skills td {
+        padding-top: 5px;
+      }
+      .genie-mjs5 .noPind {
+        margin-left: 0;
+      }
+      .genie-mjs5 .nameSec:before,
+      .genie-mjs5 .SECTION_CNTC:before {
+        background: #373d48;
+      }
+
+      .genie-mjs5 .nameSec,
+      .genie-mjs5 .SECTION_CNTC {
+        margin-left: -24px !important;
+        margin-right: -24px !important;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .genie-mjs5 .section.notdraggable + .section:not(.notdraggable):before {
+        height: 30px;
+      }
+      .genie-mjs5 .single-column:before {
+        background: #373d48;
+        top: 4px;
+      }
+      .genie-mjs5 .paragraph .dates_wrapper + .single-column:before {
+        left: -100px;
+      }
+
+      .genie-mjs5 .headingIcon svg rect {
+        fill: #373d48;
+      }
+      .genie-mjs5 .headingIcon {
+        top: -8px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page-wrap">
+      <div class="genie-mjs5 fontsize font-face vmargins hmargins pagesize">
+        <div class="top-section">
+          <div class="left-box">
+            <div class="section nameSec notdraggable first-section">
+              <div class="paragraph first-paragraph">
+                <div class="name">
+                  <span class="field fName"></span>
+                  <span class="field"> Eli Sukhvir </span>
+                </div>
+                <div class="resumeTitle"></div>
+              </div>
+            </div>
+            <div class="section SECTION_CNTC notdraggable">
+              <div class="paragraph PARAGRAPH_CNTC first-paragraph">
+                <div class="address">
+                  <div class="addressLeft">
+                    <div>
+                      <span class="txtBold">Address </span
+                      ><span class="field"></span><span>,</span
+                      ><span class="spaced field">Peshawar</span><span>,</span
+                      ><span class="spaced field">Pakistan</span>
+                    </div>
+                    <div>
+                      <span class="txtBold">Phone </span
+                      ><span class="field" dependency="HPHN">03328011990</span
+                      ><span class="field"></span>
+                    </div>
+                    <div>
+                      <span class="txtBold">E-mail </span
+                      ><span class="field">Eli@gmail.com</span>
+                    </div>
+                  </div>
+                  <div class="addressRight"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-box"></div>
+        </div>
+        <div class="parentContainer">
+          <div>
+            <div class="section summary notdraggable">
+              <div class="paragraph first-paragraph">
+                <div class="field single-column noPind">
+                  <p>
+                    Entry point doesn't exist neither at index.js nor
+                    index.ios.js. Skip prewarming
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="heading">
+                <div class="headingIcon"></div>
+                <div class="section-title">Skills</div>
+              </div>
+              <div class="paragraph first-paragraph">
+                <div class="single-column main-column noPind">
+                  <span class="ratingfield">
+                    <ul>
+                      <li>JavaScript</li>
+                      <br />
+                      <li>Swift</li>
+                      <br />
+                      <li>React Native</li>
+                      <br /></ul
+                  ></span>
+                </div>
+                <div class="headingIcon"></div>
+                <div class="section-title">Hobbies</div>
+              </div>
+              <div class="paragraph first-paragraph">
+                <div class="single-column main-column noPind">
+                  <span class="ratingfield">
+                    <ul>
+                      <li>Painting</li>
+                      <br />
+                      <li>Gardening</li>
+                      <br />
+                      <li>Coding</li>
+                      <br />
+                    </ul>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="heading">
+                <div class="headingIcon"></div>
+                <div class="section-title">Work History</div>
+              </div>
+              <div class="paragraph first-paragraph">
+                <span class="dates_wrapper"
+                  ><span class="jobdates" format="%b %Y">2012 / 12</span
+                  ><span> - </span
+                  ><span class="jobdates" format="%b %Y">2022 / 12</span></span
+                >
+                <div class="single-column">
+                  <span class="padded-line pb5"
+                    ><span class="job-title"
+                      >Senior Software Engineer</span
+                    ></span
+                  ><span class="padded-line txtItalics pb5"
+                    ><span class="companyname">Coeus Solutions</span
+                    ><span>,</span><span class="job-location jobcity"></span
+                    ><span></span
+                    ><span class="job-location jobstate"></span></span
+                  ><span class="padded-line"
+                    ><span class="jobline"
+                      ><ul>
+                        <li>
+                          I am looking for large text files for testing the
+                          compression and decompression in all sizes from 1kb to
+                          100mb. Can someone please refer me to download it from
+                          some link.
+                        </li>
+                        <li>
+                          Arbitrarily large text files can be generated on Linux
+                          with the following command.
+                        </li>
+                        <li>
+                          Um, no, not at all what you want for testing the
+                          effectiveness of your compressor. The resulting text
+                          is highly repetitive, and does not represent what a
+                          compressor will see in the real world. Do not use this
+                          answer. See the compression corpora in the other
+                          answers.
+                        </li>
+                        <li>This is a test roles for your job.</li>
+                      </ul></span
+                    >
+                  </span>
+                </div>
+              </div>
+              <div class="paragraph first-paragraph">
+                <span class="dates_wrapper"
+                  ><span class="jobdates" format="%b %Y">2023 / 01</span
+                  ><span> - </span
+                  ><span class="jobdates" format="%b %Y"> / </span></span
+                >
+                <div class="single-column">
+                  <span class="padded-line pb5"
+                    ><span class="job-title">Online Art Tutor</span></span
+                  ><span class="padded-line txtItalics pb5"
+                    ><span class="companyname">Genie Devs</span><span>,</span
+                    ><span class="job-location jobcity"></span><span></span
+                    ><span class="job-location jobstate"></span></span
+                  ><span class="padded-line"
+                    ><span class="jobline"
+                      ><ul>
+                        <li>
+                          You can download enwik8 and enwik9 from here. They are
+                          respectively 100,000,000 and 1,000,000,000 bytes of
+                          text for compression benchmarks. You can always pull
+                          subsets of those for smaller tests.
+                        </li>
+                        <li>
+                          Project Gutenberg looks exceptionally promising for
+                          this purpose. This resource contains thousands of
+                          books in many formats. Here is a sample of what is
+                          available.
+                        </li>
+                        <li>
+                          Delete it, or replace it with a different answer.
+                          Lorem ipsum is no help here.
+                        </li>
+                        <li>
+                          It's obvious to me from what I see in your answer
+                          history, that you know what you're talking about, so
+                          respectfully, I'm quite interested in any explanation
+                          you would have to offer.
+                        </li>
+                      </ul></span
+                    >
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="heading">
+                <div class="headingIcon"></div>
+                <div class="section-title">Education</div>
+              </div>
+              <div class="paragraph first-paragraph">
+                <span class="dates_wrapper"
+                  ><span class="jobdates" format="%b %Y"></span
+                  ><span class="jobdates" format="%b %Y"></span
+                ></span>
+                <div class="single-column">
+                  <span class="padded-line"
+                    ><span class="degree"></span
+                    ><span class="program-line">BS Software Engineering</span>
+                  </span>
+                  <span class="padded-line txtItalics"
+                    ><span
+                      class="companyname companyname_educ"
+                      dependency="SCHO"
+                      >University of Peshawar</span
+                    ><span> </span
+                    ><span
+                      class="companyname companyname_educ"
+                      dependency="SCHO"
+                    ></span
+                    ><span> - </span
+                    ><span class="job-location jobcity"
+                      >10 / 2006 - 10 / 2010</span
+                    ><span> </span
+                    ><span class="job-location jobstate"></span></span
+                  ><span class="padded-line"><span class="field"></span></span>
+                </div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="heading">
+                <div class="headingIcon"></div>
+                <div class="section-title">Certificate</div>
+              </div>
+              <div class="paragraph first-paragraph">
+                <span class="dates_wrapper"
+                  ><span class="jobdates" format="%b %Y"></span
+                  ><span class="jobdates" format="%b %Y"></span
+                ></span>
+
+                <span class="program-line">BS Software Engineering</span>
+                <span></span>
+                <p>Company Peshawar</p>
+                <p class="dates">10 - 2010</p>
+              </div>
+            </div>
+            <div class="section">
+              <div class="heading">
+                <div class="headingIcon"></div>
+                <div class="section-title">Awards</div>
+              </div>
+              <div class="paragraph first-paragraph">
+                <span class="dates_wrapper"
+                  ><span class="jobdates" format="%b %Y"></span
+                  ><span class="jobdates" format="%b %Y"></span
+                ></span>
+
+                <span class="program-line">BS Software Engineering</span>
+                <span></span>
+                <p>Company Peshawar</p>
+                <p class="dates">2010</p>
+              </div>
+            </div>
+            <div class="section">
+              <div class="heading">
+                <div class="headingIcon"></div>
+                <div class="section-title">Reference</div>
+              </div>
+              <div class="paragraph first-paragraph">
+                <span class="dates_wrapper"
+                  ><span class="jobdates" format="%b %Y"></span
+                  ><span class="jobdates" format="%b %Y"></span
+                ></span>
+
+                <span class="program-line">BS Software Engineering</span>
+                <span></span>
+                <p>CompanyPeshawar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

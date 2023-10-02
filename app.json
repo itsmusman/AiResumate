@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "ai resumate",
+    "slug": "ai_resumate",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./app/assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./app/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+   
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.airesumate.app"
+    },
+    "android": {
+      "package": "com.airesumate.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./app/assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": ["android.permission.RECORD_AUDIO"]
+    },
+    "web": {
+      "favicon": "./app/assets/favicon.png"
+    },
+
+    "extra": {
+      "eas": {
+        "projectId": "8ba63467-f7b8-4723-b2b8-ea59c7345035"
+      }
+    }
+  },
+
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-1537167347266215~8244991689",
+    "ios_app_id": "ca-app-pub-xxxxxxxx~xxxxxxxx"
+  }
+}

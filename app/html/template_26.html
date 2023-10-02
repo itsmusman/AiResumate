@@ -1,0 +1,573 @@
+<html>
+  <head>
+   <style>
+      body {
+        margin: auto;
+      }
+      .genie-ak7 ol,
+      .genie-ak7 ul {
+        list-style: none;
+      }
+      .genie-ak7 table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-size: inherit;
+        color: inherit;
+        width: 100%;
+      }
+
+      .genie-ak7 ul,
+      .genie-ak7 li {
+        margin: 0;
+        padding: 0;
+        list-style-type: disc;
+      }
+      .genie-ak7 ul li {
+        margin: 0 0 0 16px;
+        padding: 0;
+      }
+
+      .genie-ak7 table.skills,
+      .genie-ak7 .table_wrapper {
+        width: 100%;
+        margin-top: 0;
+        word-wrap: break-word;
+      }
+      .genie-ak7 table.skills th,
+      table.skills td {
+        width: 20%;
+        text-align: center;
+      }
+      .genie-ak7 table.skills .skill-name,
+      .genie-ak7 table.skills .skill-rating {
+        text-align: left;
+        width: 35%;
+      }
+      .genie-ak7 table.skills .skill-rating {
+        width: 20%;
+      }
+      .genie-ak7 table.skills .skill-years,
+      .genie-ak7 table.skills .skill-last {
+        width: 19%;
+      }
+      .genie-ak7 table.skills .pad1 {
+        width: 5%;
+      }
+      .genie-ak7 .skills .pad2,
+      .genie-ak7 table.skills .pad3 {
+        width: 1%;
+      }
+
+      .genie-ak7 {
+        color: #343434;
+        line-height: 16px;
+        font-variant-ligatures: none;
+        min-height: 1024px;
+        box-sizing: border-box;
+        word-wrap: break-word;
+      }
+      .genie-ak7 .name {
+        color: #002e58;
+        font-weight: bold;
+        padding: 0 0 6px 0;
+        text-align: left;
+        position: relative;
+        word-wrap: break-word;
+      }
+      .genie-ak7 .address .single-column {
+        margin-left: 0 !important;
+      }
+      .genie-ak7 .resumeTitle {
+        color: #002e58;
+        font-style: italic;
+        font-weight: 400;
+      }
+
+      .genie-ak7 .heading {
+        border-bottom: 1px solid #d5d6d6;
+        padding: 0 0 3px;
+        letter-spacing: 0;
+        font-weight: bold;
+        line-height: 15px;
+        margin-bottom: 10px;
+      }
+      .genie-ak7 .section-title {
+        color: #002e58;
+        word-wrap: break-word;
+      }
+      .genie-ak7 .degreeGap {
+        margin-bottom: 4px;
+      }
+      .genie-ak7 .locationGap {
+        margin-top: 4px;
+      }
+      .genie-ak7 .first-paragraph {
+        margin-top: 0 !important;
+      }
+
+      .genie-ak7 .first-section {
+        padding-top: 0 !important;
+      }
+      .genie-ak7 .section:empty {
+        display: none;
+      }
+      .genie-ak7 .education .job-location {
+        font-style: italic;
+      }
+
+      .genie-ak7 .top-section > div {
+        padding-bottom: 20px;
+      }
+
+      .genie-ak7 .parentContainer {
+        display: table;
+        width: 100%;
+        min-height: inherit;
+        table-layout: fixed;
+        border-collapse: collapse;
+      }
+      .genie-ak7 .left-box,
+      .genie-ak7 .right-box {
+        padding-left: 15px;
+      }
+      .genie-ak7 .left-box {
+        padding-left: 0;
+        padding-right: 15px;
+      }
+      .genie-ak7 .left-box {
+        box-sizing: initial;
+        display: table-cell;
+        letter-spacing: 0.2px;
+      }
+      .genie-ak7 .right-box .section:first-child,
+      .genie-ak7 .left-box .section:first-child {
+        padding-top: 0px !important;
+      }
+      .genie-ak7 .right-box .padded-line.date-content {
+        position: absolute;
+        font-weight: 700;
+        margin-left: 0;
+        width: 65px;
+      }
+      .genie-ak7 .paragraph {
+        position: relative;
+      }
+      .genie-ak7 .summary .single-column {
+        margin-left: 0;
+      }
+      .genie-ak7 .right-box {
+        display: table-cell;
+        letter-spacing: 0.2px;
+      }
+      .genie-ak7 .summary.section {
+        padding-top: 15px;
+      }
+
+      .genie-ak7 .txtBold {
+        font-weight: bold;
+      }
+      .genie-ak7 .txtItl {
+        font-style: italic;
+      }
+      .genie-ak7 .padded-line {
+        display: block;
+      }
+      .genie-ak7 .mt5 {
+        margin-top: 5px;
+      }
+      .genie-ak7 .word-break {
+        word-wrap: break-word;
+      }
+
+      .genie-ak7 .ratingWrapper svg {
+        height: 10px;
+        stroke: #002e58;
+      }
+      .genie-ak7 .ratingWrapper .noLnht {
+        line-height: 0;
+      }
+      .genie-ak7 .headingIcon svg circle,
+      .genie-ak7 .ratingWrapper svg .default-fill {
+        fill: #002e58;
+      }
+      .genie-ak7 .ratingRow {
+        position: relative;
+        white-space: nowrap;
+      }
+      .genie-ak7 .ratingRow .ratingText,
+      .genie-ak7 .ratingRow .ratingWrapper {
+        width: 50%;
+        display: inline-block;
+        word-break: break-word;
+        white-space: normal;
+        vertical-align: top;
+      }
+      .genie-ak7 .ratingRow .ratingText + .ratingWrapper {
+        text-align: right;
+      }
+      .genie-ak7 .SortableItem .ratingRow .ratingText + .ratingWrapper {
+        margin-top: 5px;
+        padding-top: 0;
+      }
+      .genie-ak7 .SortableItem .ratingWrapper span {
+        top: 0;
+        line-height: inherit;
+      }
+
+      .genie-ak7 .ratingRow .ratingText:last-child {
+        width: 100%;
+      }
+
+      .genie-ak7 .right-box .hide-dates {
+        visibility: hidden;
+        position: static !important;
+        display: block;
+        float: left;
+      }
+      .genie-ak7 .left-box .hide-dates {
+        display: none;
+      }
+      .genie-ak7 .paragraph.dates-para:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .genie-ak7,
+      .genie-ak7 table {
+        line-height: 18px;
+      }
+      .genie-ak7.pagesize {         width: 792px;
+      }
+      .genie-ak7.fontsize {
+        font-size: 11px;
+      }
+      .genie-ak7.font-face {
+        font-family: "Century Gothic", Helvetica, sans-serif;
+      }
+      .genie-ak7.vmargins {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      .genie-ak7.hmargins {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .genie-ak7 .section {
+        padding-top: 20px;
+      }
+      .genie-ak7 .left-box .section:after {
+        padding-bottom: 10px;
+      }
+      .genie-ak7 .paragraph {
+        margin-top: 10px;
+      }
+      .genie-ak7 .single-column,
+      .genie-ak7 .main-column {
+        word-wrap: break-word;
+      }
+      .genie-ak7 .right-box .single-column,
+      .genie-ak7 .right-box .main-column {
+        margin-left: 0px;
+      }
+      .genie-ak7 table.skills td {
+        padding-top: 5px;
+      }
+      .genie-ak7 .job-title,
+      .genie-ak7 .degree,
+      .genie-ak7 .program-line {
+        font-size: 14px;
+      }
+      .genie-ak7 .name {
+        color: #002e58;
+        font-size: 36px;
+        line-height: 39.5px;
+      }
+      .genie-ak7 .heading {
+        line-height: 22px;
+      }
+      .genie-ak7 .section-title {
+        font-size: 16px;
+        color: #002e58;
+      }
+      .genie-ak7 .left-box {
+        width: 161px;
+      }
+      .genie-ak7 .right-box .paragraph .single-column {
+        margin-left: 91px;
+      }
+      .genie-ak7 svg {
+        stroke: #002e58;
+      }
+      .genie-ak7 .resumeTitle {
+        font-size: 16px;
+        color: #002e58;
+        line-height: 16px;
+      }
+      .genie-ak7 .ratingWrapper {
+        padding-top: 4px;
+      }
+      .genie-ak7 .ratingWrapper svg {
+        stroke: #002e58;
+      }
+      .genie-ak7 .headingIcon svg circle,
+      .genie-ak7 .ratingWrapper svg .default-fill {
+        fill: #002e58;
+      }
+
+      #displayResume .genie-ak7 {
+        min-height: 1024px;
+      }
+      .genie-ak7 .SortableList {
+        margin-bottom: 0 !important;
+      }
+      .genie-ak7 .SortableList,
+      .genie-ak7 > div {
+        min-height: inherit;
+      }
+      .genie-ak7 .left-box .SortableItem:first-child > .wrapper > .section {
+        padding-top: 0 !important;
+      }
+      .genie-ak7 > div:not(.top-section),
+      .genie-ak7 > div:not(.parentContainer) {
+        min-height: auto;
+      }
+
+      .genie-ak7 .parentContainer .left-box > .SortableItem,
+      .genie-ak7 .parentContainer .right-box > .SortableItem {
+        padding-top: 20px;
+      }
+      .genie-ak7 .parentContainer .left-box > .SortableItem:first-child,
+      .genie-ak7 .parentContainer .right-box > .SortableItem:first-child {
+        padding-top: 0;
+      }
+
+      .genie-ak7.active .wrapper-bg {
+        left: -62px !important;
+        right: -62px !important;
+      }
+      .genie-ak7.active .acrs-bdr {
+        left: -60px !important;
+      }
+      .genie-ak7.active .acr-edit,
+      .genie-ak7.active .acr-delete {
+        left: -59px !important;
+      }
+      .genie-ak7.active .acr-move {
+        right: -59px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page-wrap">
+      <div class="genie-ak7 fontsize font-face vmargins hmargins pagesize">
+        <div class="top-section">
+          <div class="last-box">
+            <div class="section notdraggable first-section">
+              <div class="paragraph first-paragraph">
+                <div class="name word-break">
+                  <span class="field"></span><span class="field word-break">Eli Sukhvir</span>
+                </div>
+                <div class="resumeTitle"></div>
+              </div>
+            </div>
+            <div class="section summary notdraggable">
+              <div class="paragraph first-paragraph">
+                <div class="field single-column">
+                  <p>
+                   Entry point doesn't exist neither at index.js nor index.ios.js. Skip prewarming
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="parentContainer">
+          <div class="left-box last-box">
+            <div class="section SECTION_CNTC notdraggable">
+              <div class="heading">
+                <div class="section-title">Contact</div>
+              </div>
+              <div class="paragraph PARAGRAPH_CNTC first-paragraph">
+                <div class="address">
+                  <div class="single-column">
+                    <div>
+                      <div class="txtBold">Address</div>
+                      <div class="field"></div>
+                      <span>, </span><span class="field">Peshawar</span
+                      ><span>, </span><span class="field">Pakistan</span>
+                    </div>
+                    <div class="txtBold mt5">Phone</div>
+                    <div>
+                      <span class="field">03328011990</span>
+                    </div>
+                    <div class="txtBold mt5">E-mail</div>
+                    <div class="word-break">
+                      <span class="field">Eli@gmail.com</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="heading">
+                <div class="section-title">Skills</div>
+              </div>
+              <div class="paragraph first-paragraph">
+                <div class="ratingRow">
+                  <div class="ratingText">
+                    <ul>
+                    <li>JavaScript</li><br/><li>Swift</li><br/><li>React Native</li><br/>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="heading">
+              <div class="section-title">Hobbies</div>
+            </div>
+            <div class="paragraph first-paragraph">
+              <div class="ratingRow">
+                <div class="ratingText">
+                  <ul>
+                  <li>Painting</li><br/><li>Gardening</li><br/><li>Coding</li><br/>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="right-box last-box">
+            <div class="section experience">
+              <div class="heading">
+                <div class="section-title">Work History</div>
+              </div>
+               <div class="paragraph first-paragraph">
+     <span class="dates_wrapper"
+       ><span class="jobdates" format="%b %Y">2012 / 12</span
+       ><span> - </span
+       ><span class="jobdates" format="%b %Y">2022 / 12</span></span
+     >
+     <div class="single-column">
+       <span class="padded-line pb5"
+         ><span class="job-title">Senior Software Engineer</span
+         ></span
+       ><span class="padded-line txtItalics pb5"
+         ><span class="companyname">Coeus Solutions</span><span>,</span
+         ><span class="job-location jobcity"></span
+         ><span></span
+         ><span class="job-location jobstate"></span></span
+       ><span class="padded-line"
+         ><span class="jobline"
+           ><ul><li>I am looking for large text files for testing the compression and decompression in all sizes from 1kb to 100mb. Can someone please refer me to download it from some link.</li><li>Arbitrarily large text files can be generated on Linux with the following command.</li><li>Um, no, not at all what you want for testing the effectiveness of your compressor. The resulting text is highly repetitive, and does not represent what a compressor will see in the real world. Do not use this answer. See the compression corpora in the other answers.</li><li>This is a test roles for your job.</li></ul></span>
+       </span> 
+       </div>
+       </div>  <div class="paragraph first-paragraph">
+     <span class="dates_wrapper"
+       ><span class="jobdates" format="%b %Y">2023 / 01</span
+       ><span> - </span
+       ><span class="jobdates" format="%b %Y"> / </span></span
+     >
+     <div class="single-column">
+       <span class="padded-line pb5"
+         ><span class="job-title">Online Art Tutor</span
+         ></span
+       ><span class="padded-line txtItalics pb5"
+         ><span class="companyname">Genie Devs</span><span>,</span
+         ><span class="job-location jobcity"></span
+         ><span></span
+         ><span class="job-location jobstate"></span></span
+       ><span class="padded-line"
+         ><span class="jobline"
+           ><ul><li>You can download enwik8 and enwik9 from here. They are respectively 100,000,000 and 1,000,000,000 bytes of text for compression benchmarks. You can always pull subsets of those for smaller tests.</li><li>Project Gutenberg looks exceptionally promising for this purpose. This resource contains thousands of books in many formats. Here is a sample of what is available.</li><li>Delete it, or replace it with a different answer. Lorem ipsum is no help here.</li><li>It's obvious to me from what I see in your answer history, that you know what you're talking about, so respectfully, I'm quite interested in any explanation you would have to offer.</li></ul></span>
+       </span> 
+       </div>
+       </div> 
+              
+            </div>
+            <div class="section education">
+              <div class="heading">
+                <div class="section-title">Education</div>
+              </div>
+              <div class="single-column">
+<span class="padded-line"
+  ><span class="degree"></span><span class="program-line">BS Software Engineering</span></span
+><span class="padded-line txtItalics"
+  ><span
+    class="companyname companyname_educ"
+    dependency="SCHO"
+    >University of Peshawar</span
+  ><span> </span><span
+  class="companyname companyname_educ"
+  dependency="SCHO"
+  ></span
+><span> - </span
+><span class="job-location jobcity">10 / 2006 - 10 / 2010</span
+  ><span> </span
+  ><span class="job-location jobstate"></span></span
+><span class="padded-line"><span class="field"></span></span>
+</div>
+            </div>
+
+            
+      <div class="section education">
+<div class="heading">
+  <div class="section-title">Certification</div>
+</div>
+          <div class="single-column">
+         <span class="padded-line"
+           ><span class="degree"></span><span class="program-line">BS Software Engineering</span></span
+         ><span class="padded-line txtItalics"
+           ><span
+             class="companyname companyname_educ"
+             dependency="SCHO"
+             >Company Peshawar</span
+           ><span> </span>
+           <span class="job-location jobcity">10 - 2010</span
+           ><span> </span
+           ><span class="job-location jobstate"></span></span
+         ><span class="padded-line"><span class="field"></span></span>
+         </div>
+          </div> 
+            
+      <div class="section education">
+      <div class="heading">
+        <div class="section-title">Awards</div>
+      </div>
+                <div class="single-column">
+               <span class="padded-line"
+                 ><span class="degree"></span><span class="program-line">BS Software Engineering</span></span
+               ><span class="padded-line txtItalics"
+                 ><span
+                   class="companyname companyname_educ"
+                   dependency="SCHO"
+                   >Company Peshawar</span
+                 ><span> </span>
+                 <span class="job-location jobcity">2010</span
+                 ><span> </span
+                 ><span class="job-location jobstate"></span></span
+               ><span class="padded-line"><span class="field"></span></span>
+               </div>
+                </div> 
+            
+      <div class="section education">
+      <div class="heading">
+        <div class="section-title">Reference</div>
+      </div>
+                <div class="single-column">
+               <span class="padded-line"
+                 ><span class="degree"></span><span class="program-line">BS Software Engineering</span></span
+               ><span class="padded-line txtItalics"
+                 ><span
+                   class="companyname companyname_educ"
+                   dependency="SCHO"
+                   >CompanyPeshawar</span
+                 ><span> </span>
+                 
+               </div>
+                </div> 
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

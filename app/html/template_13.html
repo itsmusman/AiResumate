@@ -1,0 +1,576 @@
+<html>
+  <head>
+   <style>
+      body {
+        margin: auto;
+      }
+      .genie-mjs3 ol,
+      .genie-mjs3 ul {
+        list-style: none;
+      }
+      .genie-mjs3 table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-size: inherit;
+        color: inherit;
+        width: 100%;
+      }
+      .genie-mjs3 .txtBold {
+        font-weight: 700;
+      }
+      .genie-mjs3 .padded-line {
+        display: block;
+      }
+      .genie-mjs3 .mt5 {
+        margin-top: 5px;
+      }
+      .genie-mjs3 .word-break {
+        word-wrap: break-word;
+      }
+      .genie-mjs3 ul,
+      .genie-mjs3 li {
+        margin: 0;
+        padding: 0;
+        list-style-type: disc;
+      }
+      .genie-mjs3 ul li {
+        margin: 0 0 0 16px;
+        padding: 0;
+      }
+      .genie-mjs3 table.skills,
+      .genie-mjs3 .table_wrapper {
+        margin-top: 0;
+        width: 100%;
+        word-wrap: break-word;
+      }
+      .genie-mjs3 table.skills th,
+      table.skills td {
+        text-align: center;
+        width: 20%;
+      }
+      .genie-mjs3 table.skills .skill-name,
+      .genie-mjs3 table.skills .skill-rating {
+        text-align: left;
+        width: 35%;
+      }
+      .genie-mjs3 table.skills .skill-rating {
+        width: 20%;
+      }
+      .genie-mjs3 table.skills .skill-years,
+      .genie-mjs3 table.skills .skill-last {
+        width: 19%;
+      }
+      .genie-mjs3 table.skills .pad1 {
+        width: 5%;
+      }
+      .genie-mjs3 .skills .pad2,
+      .genie-mjs3 table.skills .pad3 {
+        width: 1%;
+      }
+      .genie-mjs3 {
+        box-sizing: border-box;
+        color: #343434;
+        font-variant-ligatures: none;
+        line-height: 16px;
+        min-height: 1024px;
+        word-wrap: break-word;
+      }
+      .genie-mjs3 .name {
+        color: #252932;
+        font-weight: 700;
+        padding: 0;
+        position: relative;
+        text-align: left;
+        word-wrap: break-word;
+      }
+      .genie-mjs3 .address .single-column {
+        margin-left: 0 !important;
+      }
+      .genie-mjs3 .heading {
+        border-bottom: 1px solid #d5d6d6;
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 15px;
+        margin-bottom: 10px;
+        padding-bottom: 2px;
+      }
+      .genie-mjs3 .section-title {
+        color: #252932;
+        word-wrap: break-word;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .genie-mjs3 .degreeGap {
+        margin-bottom: 4px;
+      }
+      .genie-mjs3 .locationGap {
+        margin-top: 4px;
+      }
+      .genie-mjs3 .first-paragraph {
+        margin-top: 0 !important;
+      }
+      .genie-mjs3 .section:empty {
+        display: none;
+      }
+      .genie-mjs3 .parentContainer {
+        border-collapse: collapse;
+        display: table;
+        min-height: inherit;
+        table-layout: fixed;
+        width: 100%;
+      }
+      .genie-mjs3 .left-box,
+      .genie-mjs3 .right-box {
+        padding-left: 15px;
+        padding-top: 20px;
+      }
+      .genie-mjs3 .left-box,
+      .genie-mjs3 .right-box {
+        padding-left: 15px;
+        padding-top: 20px;
+      }
+      .genie-mjs3 .left-box {
+        display: table-cell;
+        letter-spacing: 0.2px;
+        padding-left: 0;
+        padding-right: 15px;
+        vertical-align: top;
+        box-sizing: initial;
+      }
+      .genie-mjs3 .right-box .padded-line.date-content {
+        position: absolute;
+        font-weight: 700;
+        margin-left: 0;
+        width: 65px;
+      }
+      .genie-mjs3 .paragraph {
+        position: relative;
+      }
+      .genie-mjs3 .right-box {
+        display: table-cell;
+        letter-spacing: 0.2px;
+        vertical-align: top;
+      }
+      .genie-mjs3 .first-section {
+        padding-top: 0 !important;
+      }
+      .genie-mjs3 .right-box .section:first-child,
+      .genie-mjs3 .left-box .section:first-child {
+        padding-top: 0px !important;
+      }
+      .genie-mjs3 .education .job-location,
+      .genie-mjs3 .txtItl {
+        font-style: italic;
+      }
+      .genie-mjs3 .summary .single-column {
+        margin-left: 0;
+      }
+      .genie-mjs3 .summary.section {
+        padding-top: 15px;
+      }
+      .genie-mjs3 .resumetitle {
+        color: #252932;
+        padding-top: 10pt;
+      }
+      .genie-mjs3 .ratingWrapper svg {
+        height: 10px;
+        stroke: #252932;
+      }
+      .genie-mjs3 .headingIcon svg circle,
+      .genie-mjs3 .ratingWrapper svg .default-fill {
+        fill: #252932;
+      }
+      .genie-mjs3 .ratingRow {
+        position: relative;
+        white-space: nowrap;
+      }
+      .genie-mjs3 .ratingRow .ratingText,
+      .genie-mjs3 .ratingRow .ratingWrapper {
+        width: 50%;
+        display: inline-block;
+        word-wrap: break-word;
+        white-space: normal;
+        vertical-align: top;
+      }
+      .genie-mjs3 .ratingRow .ratingText + .ratingWrapper {
+        text-align: right;
+        line-height: normal;
+        margin-top: 4px;
+      }
+      .genie-mjs3 .headingIcon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 3px;
+      }
+      .genie-mjs3 .headingIcon svg {
+        height: 30px;
+        width: 30px;
+        display: block;
+      }
+      .genie-mjs3 .headingIcon svg path {
+        fill: #fff;
+      }
+      .genie-mjs3 .right-box .hide-dates {
+        visibility: hidden;
+        position: static !important;
+        display: block;
+        float: left;
+      }
+      .genie-mjs3 .left-box .hide-dates {
+        display: none;
+      }
+      .genie-mjs3 .paragraph.dates-para:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .genie-mjs3 .ratingRow .ratingText:last-child {
+        width: 100%;
+      }
+      .genie-mjs3,
+      .genie-mjs3 table {
+        line-height: 18px;
+      }
+      .genie-mjs3.pagesize {         width: 792px;
+      }
+      .genie-mjs3.font-face {
+        font-family: "Century Gothic", Helvetica, sans-serif;
+      }
+      .genie-mjs3.fontsize {
+        font-size: 11px;
+      }
+      .genie-mjs3.vmargins {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+      .genie-mjs3.hmargins {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+      .genie-mjs3 .section {
+        padding-top: 20px;
+      }
+      .genie-mjs3 .left-box .section:after {
+        padding-bottom: 10px;
+      }
+      .genie-mjs3 .paragraph {
+        margin-top: 10px;
+      }
+      .genie-mjs3 .single-column,
+      .genie-mjs3 .main-column {
+        word-wrap: break-word;
+      }
+      .genie-mjs3 .right-box .single-column,
+      .genie-mjs3 .right-box .main-column {
+        margin-left: 0px;
+      }
+      .genie-mjs3 table.skills td {
+        padding-top: 5px;
+      }
+      .genie-mjs3 .jobdates {
+        font-size: 11px;
+      }
+      .genie-mjs3 .job-title,
+      .genie-mjs3 .degree,
+      .genie-mjs3 .program-line {
+        font-size: 14px;
+      }
+      .genie-mjs3 .name {
+        color: #252932;
+        font-size: 36px;
+        line-height: 39.5px;
+      }
+      .genie-mjs3 .heading {
+        line-height: 23px;
+      }
+      .genie-mjs3 .section-title,
+      .genie-mjs3 .resumeTitle {
+        font-size: 16px;
+        color: #252932;
+      }
+      .genie-mjs3 .left-box {
+        width: 156px;
+      }
+      .genie-mjs3 .right-box .paragraph .single-column {
+        margin-left: 91px;
+      }
+      #displayResume .genie-mjs3 {
+        min-height: 1024px;
+      }
+      .genie-mjs3 > div {
+        min-height: inherit;
+      }
+      .genie-mjs3 .left-box .sortable-item:first-child > .wrapper > .section,
+      .genie-mjs3 .right-box .sortable-item:first-child > .wrapper > .section {
+        padding-top: 0 !important;
+      }
+      .genie-mjs3 > div:not(.top-section),
+      .genie-mjs3 > div:not(.parentContainer) {
+        min-height: auto;
+      }
+      .genie-mjs3 .parentContainer .left-box > .sortable-item,
+      .genie-mjs3 .parentContainer .right-box > .sortable-item {
+        padding-top: 20px;
+      }
+      .genie-mjs3 .parentContainer .left-box > .sortable-item:first-child,
+      .genie-mjs3 .parentContainer .right-box > .sortable-item:first-child {
+        padding-top: 0;
+      }
+      .genie-mjs3 .parentContainer .sortable-item.active .heading.section-title {
+        display: inline;
+      }
+      .GAK3.genie-mjs3 .sortable-item.active .section-title {
+        display: inline;
+      }
+      .genie-mjs3 .ratingWrapper svg {
+        stroke: #252932;
+      }
+      .genie-mjs3 .headingIcon svg circle,
+      .genie-mjs3 .ratingWrapper svg .default-fill {
+        fill: #252932;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page-wrap">
+      <div class="genie-mjs3 fontsize font-face vmargins hmargins pagesize">
+        <div class="top-section">
+          <div class="last-box">
+            <div class="section notdraggable first-section">
+              <div class="paragraph first-paragraph">
+                <div class="name word-break">
+                  <span class="field"></span>
+                  <span class="field word-break">Eli  Sukhvir</span>
+                </div>
+                <div class="resumeTitle"></div>
+              </div>
+            </div>
+            <div class="section summary notdraggable">
+              <div class="paragraph first-paragraph">
+                <div class="field single-column">
+                  <p>
+                  Entry point doesn't exist neither at index.js nor index.ios.js. Skip prewarming
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="parentContainer">
+          <div class="left-box last-box">
+            <div class="section SECTION_CNTC notdraggable">
+              <div class="heading">
+                <span class="headingIcon"> </span
+                ><span class="section-title">Contact</span>
+              </div>
+              <div class="paragraph PARAGRAPH_CNTC first-paragraph">
+                <div class="address">
+                  <div class="single-column">
+                    <div>
+                      <div class="txtBold">Address</div>
+                      <div class="field"></div>
+                     <span class="field">Peshawar</span
+                      ><span>, </span><span class="field">Pakistan</span>
+                    </div>
+                    <div class="txtBold mt5">Phone</div>
+                    <div>
+                      <span class="field">03328011990</span>
+                    </div>
+                    <div class="txtBold mt5">E-mail</div>
+                    <div class="word-break">
+                      <span class="field">Eli@gmail.com</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section">
+            
+              <div class="heading">
+                <span class="headingIcon"></span>
+                <span class="section-title">Skills</span>
+              </div>
+              <div class="paragraph first-paragraph">
+                <div class="ratingRow">
+                  <div class="ratingText">
+                    <ul>
+                    <li>JavaScript</li><br/><li>Swift</li><br/><li>React Native</li><br/>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="right-box last-box">
+            <div class="section experience">
+              <div class="heading">
+                <span class="headingIcon"> </span
+                ><span class="section-title">Work History</span>
+              </div>
+                   
+                 <div class="paragraph dates-para first-paragraph">
+  
+   <div class="padded-line date-content">
+     <span class="jobdates" format="%Y-%m">2012 12</span
+     ><span dependency="JSTD+EDDT"> - </span
+     ><span class="jobdates" format="%Y-%m"
+       ><span class="jobdates" format="%Y-%m">2022 12</span></span
+     >
+   </div>
+   <div class="single-column">
+     <span class="padded-line"
+       ><span class="job-title txtBold"
+         >Senior Software Engineer</span
+       ></span
+     ><span class="padded-line locationGap txtItl"
+       ><span class="companyname">Coeus Solutions</span><span>,</span
+       ><span class="jobcity"></span><span></span
+       ><span class="jobstate"></span></span
+     ><span class="jobline"
+       ><ul><li>I am looking for large text files for testing the compression and decompression in all sizes from 1kb to 100mb. Can someone please refer me to download it from some link.</li><li>Arbitrarily large text files can be generated on Linux with the following command.</li><li>Um, no, not at all what you want for testing the effectiveness of your compressor. The resulting text is highly repetitive, and does not represent what a compressor will see in the real world. Do not use this answer. See the compression corpora in the other answers.</li><li>This is a test roles for your job.</li></ul></span> 
+       </div> <div class="paragraph dates-para first-paragraph">
+  
+   <div class="padded-line date-content">
+     <span class="jobdates" format="%Y-%m">2023 01</span
+     ><span dependency="JSTD+EDDT"> - </span
+     ><span class="jobdates" format="%Y-%m"
+       ><span class="jobdates" format="%Y-%m"> </span></span
+     >
+   </div>
+   <div class="single-column">
+     <span class="padded-line"
+       ><span class="job-title txtBold"
+         >Online Art Tutor</span
+       ></span
+     ><span class="padded-line locationGap txtItl"
+       ><span class="companyname">Genie Devs</span><span>,</span
+       ><span class="jobcity"></span><span></span
+       ><span class="jobstate"></span></span
+     ><span class="jobline"
+       ><ul><li>You can download enwik8 and enwik9 from here. They are respectively 100,000,000 and 1,000,000,000 bytes of text for compression benchmarks. You can always pull subsets of those for smaller tests.</li><li>Project Gutenberg looks exceptionally promising for this purpose. This resource contains thousands of books in many formats. Here is a sample of what is available.</li><li>Delete it, or replace it with a different answer. Lorem ipsum is no help here.</li><li>It's obvious to me from what I see in your answer history, that you know what you're talking about, so respectfully, I'm quite interested in any explanation you would have to offer.</li></ul></span> 
+       </div> 
+              </div>
+              </div>
+              
+            </div>
+            
+            <div class="section education">
+              <div class="heading">
+                <span class="headingIcon"></span
+                ><span class="section-title">Education</span>
+              </div>
+              <div class="paragraph dates-para first-paragraph">
+                <div class="padded-line date-content">
+                  <span class="jobdates" format="%Y-%m"></span
+                  ><span class="jobdates" format="%Y-%m"></span>
+                </div>
+                <div class="single-column">
+<span class="padded-line degreeGap txtBold"
+  ><span class="degree"></span><span></span
+  ><span class="program-line">BS Software Engineering</span></span
+>
+<div class="padded-line txtItl">
+  <span class="companyname"
+    >University of Peshawar</span
+  ><span> - </span> <span class="companyname"
+  ></span
+><span> - </span><span class="job-location jobcity">10 / 2006 - 10 / 2010 </span
+  ><span> </span><span class="job-location jobstate"></span>
+</div>
+                <span class="field"></span>
+                </div>
+              </div>
+
+            </div>
+             
+             <div class="heading">
+                <span class="headingIcon"></span>
+                <span class="section-title">Hobbies</span>
+              </div>
+              <div class="paragraph first-paragraph">
+                <div class="ratingRow">
+                  <div class="ratingText">
+                    <ul>
+                    <li>Painting</li><br/><li>Gardening</li><br/><li>Coding</li><br/>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            <div class="section education">
+             
+      <div class="heading">
+     <span class="headingIcon"></span>
+     <span class="section-title">Certification</span>
+   </div>
+   <div class="paragraph dates-para first-paragraph">
+     <div class="padded-line date-content">
+       <span class="jobdates" format="%Y-%m"></span
+       ><span class="jobdates" format="%Y-%m"></span>
+     </div>
+          
+         
+              <p>BS Software Engineering</p>
+              <span></span>
+              <p>Company Peshawar</p>
+              <p class="dates">10 - 2010</p>
+          
+          
+          <span class="field"></span>
+          </div>
+        </div> 
+            </div>
+            <div class="section education">
+             
+      <div class="heading">
+     <span class="headingIcon"></span>
+     <span class="section-title">Awards</span>
+   </div>
+   <div class="paragraph dates-para first-paragraph">
+     <div class="padded-line date-content">
+       <span class="jobdates" format="%Y-%m"></span
+       ><span class="jobdates" format="%Y-%m"></span>
+     </div>
+          
+         
+              <p>BS Software Engineering</p>
+              <span></span>
+              <p>Company Peshawar</p>
+              <p class="dates">2010</p>
+          
+          
+          <span class="field"></span>
+          </div>
+        </div> 
+             
+      <div class="heading">
+     <span class="headingIcon"></span>
+     <span class="section-title">Reference</span>
+   </div>
+   <div class="paragraph dates-para first-paragraph">
+     <div class="padded-line date-content">
+       <span class="jobdates" format="%Y-%m"></span
+       ><span class="jobdates" format="%Y-%m"></span>
+     </div>
+          
+         
+              <p>BS Software Engineering</p>
+              <span></span>
+              <p>CompanyPeshawar</p>
+          
+          
+          <span class="field"></span>
+          </div>
+        </div> 
+             
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,211 @@
+import React, { useState, useEffect } from "react";
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+  FlatList,
+} from "react-native";
+import Modal from "react-native-modal";
+import { Ionicons } from "@expo/vector-icons"; // Import Ionicons from expo/vector-icons
+import colors from "../config/colors";
+import skillList from "../helper/Skills";
+
+import { firebase } from "../config/FirebaseSetup";
+import { ActivityIndicator } from "react-native-paper";
+
+export default function SearchSkillsModel({
+  visible,
+  onClose,
+  onSelectSkill,
+  skills,
+}) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [data, setData] = useState(skillList);
+  const [filteredData, setFilteredData] = useState(skillList);
+  const [selectedSkills, setSelectedSkills] = useState([]);
+
+  useEffect(() => {
+    // if (data.length === 0) {
+    //   const loadData = async () => {
+    //     try {
+    //       const collectionUri = firebase
+    //         .firestore()
+    //         .collection("data")
+    //         .doc("skill_doc");
+    //       const dataObj = (await collectionUri.get()).data();
+    //       const dataArray = dataObj["skills"];
+    //       setData(dataArray);
+    //       setFilteredData(dataArray);
+    //     } catch (error) {
+    //       console.error(error);
+    //     }
+    //   };
+    //   loadData();
+    // }
+  }, []);
+
+  const handleSearch = (searchTerm) => {
+    const filtered = data.filter((skill) =>
+      skill.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredData(filtered);
+  };
+
+  const handleSelectSkill = (skill) => {
+    const isSelected = selectedSkills.some(
+      (selectedSkill) => selectedSkill.id === skill.id
+    );
+
+    if (isSelected) {
+      setSelectedSkills((prevSelectedSkills) =>
+        prevSelectedSkills.filter(
+          (selectedSkill) => selectedSkill.id !== skill.id
+        )
+      );
+    } else {
+      setSelectedSkills((prevSelectedSkills) => [...prevSelectedSkills, skill]);
+    }
+
+    // onSelectSkill(skill); // Pass the skill object to the callback
+  };
+
+  const isSkillSelected = (skill) =>
+    selectedSkills.some((selectedSkill) => selectedSkill.id === skill.id);
+
+  return (
+    <Modal
+      swipeDirection={["down"]}
+      onSwipeComplete={onClose}
+      swipeThreshold={100}
+      isVisible={visible}
+      backdropOpacity={0.5}
+      propagateSwipe={true}
+      onBackdropPress={onClose}
+      style={styles.overlay}
+    >
+      <View style={styles.container}>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            marginBottom: 20,
+          }}
+        >
+          <Text style={styles.title}>Search Skills</Text>
+          <TouchableOpacity
+            style={styles.doneButton}
+            onPress={() => {
+              onSelectSkill(selectedSkills);
+            }}
+          >
+            <Text style={styles.cancelButtonText}>Done</Text>
+          </TouchableOpacity>
+        </View>
+
+        <TextInput
+          style={styles.searchInput}
+          onChangeText={(text) => {
+            setSearchTerm(text);
+            handleSearch(text);
+          }}
+          value={searchTerm}
+          placeholder="Search for Skills"
+          placeholderTextColor={colors.appColor}
+        />
+        {filteredData.length > 0 ? (
+          <FlatList
+            style={{ height: "100%" }}
+            data={filteredData}
+            keyExtractor={(skill) => skill.id.toString()}
+            renderItem={({ item }) => (
+              <TouchableOpacity
+                style={styles.jobItem}
+                onPress={() => handleSelectSkill(item)}
+              >
+                <Text style={styles.jobTitle}>{item.name}</Text>
+                {isSkillSelected(item) && ( // Check if skill is selected
+                  <Ionicons
+                    name="checkmark"
+                    size={24}
+                    color={colors.appColor}
+                  />
+                )}
+              </TouchableOpacity>
+            )}
+          />
+        ) : (
+          <Text
+            style={{
+              height: "100%",
+              textAlign: "center",
+            }}
+          >
+            No Data Found
+          </Text>
+        )}
+        <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
+          <Text style={styles.cancelButtonText}>Cancel</Text>
+        </TouchableOpacity>
+      </View>
+    </Modal>
+  );
+}
+
+const styles = StyleSheet.create({
+  overlay: {
+    flex: 1,
+    justifyContent: "flex-end",
+    margin: 0,
+  },
+  container: {
+    backgroundColor: "#fff",
+    padding: 20,
+    width: "100%",
+    maxHeight: "80%",
+  },
+  title: {
+    flex: 1,
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  searchInput: {
+    borderWidth: 1,
+    borderColor: colors.appColor,
+    borderRadius: 4,
+    padding: 10,
+    marginBottom: 20,
+    width: "100%",
+  },
+  jobItem: {
+    paddingHorizontal: 15,
+    borderBottomWidth: 0.5,
+    borderBottomColor: colors.appColor,
+    flexDirection: "row", // Added flexDirection for checkmark icon alignment
+    justifyContent: "space-between", // Added justifyContent for checkmark icon alignment
+    alignItems: "center", // Added alignItems for checkmark icon alignment
+  },
+  jobTitle: {
+    paddingVertical: 10,
+    fontSize: 16,
+  },
+  cancelButton: {
+    backgroundColor: colors.appColor,
+    borderRadius: 20,
+    padding: 10,
+    marginTop: 10,
+    width: "45%",
+    alignSelf: "center",
+  },
+  doneButton: {
+    backgroundColor: colors.appColor,
+    borderRadius: 20,
+    padding: 10,
+    alignSelf: "center",
+  },
+  cancelButtonText: {
+    color: "#fff",
+    textAlign: "center",
+  },
+});

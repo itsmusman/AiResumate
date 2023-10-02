@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <title>Resume</title>
+    <style>
+      @page {
+        size: A4;
+      }
+      @media print {
+        body {
+          -webkit-print-color-adjust: exact;
+        }
+      }
+
+      .background {
+        height: 100%;
+        width: 100%;
+        background-color: #f2f2f2;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.5rem;
+        color: white;
+      }
+
+      /* HEADER */
+      .header {
+        background-color: #37a4dc;
+        overflow: hidden;
+        box-shadow: 0 0 6px 0 rgba(81, 81, 81, 0.98);
+      }
+
+      .profile-image {
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 4px 4px 4px -4px rgba(0, 0, 0, 0.2);
+        float: left;
+        height: 8.5em;
+        width: 8.5em;
+        margin: 1em;
+      }
+      .profile-name {
+        color: white;
+        font-weight: bold;
+        font-size: 1.2em;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .public-info-box {
+        display: inline-block;
+        overflow: hidden;
+        padding: 1em;
+      }
+
+      .public-info-item {
+        overflow: hidden;
+        content: "";
+      }
+      .public-info-item-text {
+        color: white;
+        font-size: 0.55em;
+        font-style: normal;
+        text-decoration: none;
+        vertical-align: middle;
+        padding-left: 10px;
+        display: inline-block;
+      }
+      .public-info-item-image {
+        height: 0.9em;
+        width: 0.9em;
+        vertical-align: middle;
+      }
+
+      /* BODY */
+      .content-root {
+        display: table;
+        height: 100%;
+        width: 100%;
+      }
+      .content-left-column {
+        display: table-cell;
+        width: 40%;
+        padding-left: 20px;
+      }
+      .content-right-column {
+        display: table-cell;
+        width: 70%;
+      }
+
+      .skill-section {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+      }
+
+      .section-title {
+        font-size: 0.9em;
+        font-weight: bold;
+        color: #37a4dc;
+        padding-bottom: 10px;
+      }
+
+      .enumeration-text {
+        font-size: 13px;
+        font-weight: bold;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        color: #212121;
+      }
+      .text-detail {
+        font-size: 11px;
+        font-weight: normal;
+        color: #212121;
+      }
+
+      .horizontal-image {
+        display: inline-block;
+        height: 1.6em;
+        width: auto;
+        padding-left: 20px;
+        padding-right: 5px;
+      }
+
+      .experience-topic-container {
+        overflow: hidden;
+      }
+
+      .experience-title-card {
+        height: 40px;
+        width: 80px;
+        font-size: 12px;
+        text-align: center;
+        font-weight: bold;
+        display: table;
+        float: left;
+        box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        padding: 5px;
+        margin-bottom: 5px;
+        background-color: #37a4dc;
+        color: white;
+      }
+      span {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .experience-details-card {
+        height: auto;
+        width: 335px;
+        position: relative;
+        float: left;
+        box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        padding: 8px 8px 15px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        background-color: white;
+        color: #212121;
+      }
+
+      .right-aligned-text {
+        position: absolute;
+        right: 8px;
+      }
+
+      .bold-text {
+        font-weight: bold;
+      }
+
+      .url-text {
+        color: #212121;
+        font-style: normal;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body class="A4">
+    <section class="sheet">
+      <article class="background">
+        <!-- Header -->
+        <div class="header">
+          <div class="public-info-box">
+            <div class="profile-name">Eli Sukhvir</div>
+            <div class="public-info-item">
+              <a class="public-info-item-text" href=""
+                ><b>iOS Developer</b><br />
+                Entry point doesn't exist neither at index.js nor index.ios.js.
+                Skip prewarming</a
+              >
+            </div>
+            <div class="public-info-item">
+              <a class="public-info-item-text" href="">03328011990</a>
+            </div>
+            <div class="public-info-item">
+              <a class="public-info-item-text" href="">Eli@gmail.com</a>
+            </div>
+            <div class="public-info-item">
+              <a class="public-info-item-text" href="">www.geniedevs.com</a>
+            </div>
+            <div class="public-info-item">
+              <a class="public-info-item-text" href="">Peshawar - Pakistan</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Body - content -->
+        <div class="content-root">
+          <div class="content-left-column">
+            <div class="skill-section">
+              <!-- Skills -->
+              <div class="section-title">Skills</div>
+              <div class="enumeration-text">• JavaScript</div>
+              <div class="enumeration-text">• Swift</div>
+              <div class="enumeration-text">• React Native</div>
+            </div>
+
+            <div class="skill-section">
+              <!-- Education -->
+              <div class="section-title">Education</div>
+              <div class="enumeration-text">
+                BS Software Engineering (2006 - 2010)
+              </div>
+              <div class="enumeration-text">University of Peshawar</div>
+            </div>
+            <div class="skill-section">
+              <!-- Education -->
+              <div class="section-title">Certificate</div>
+              <div class="enumeration-text">
+                BS Software Engineering (10 - 2010)
+              </div>
+              <div class="enumeration-text">Company Peshawar</div>
+            </div>
+            <div class="skill-section">
+              <!-- Education -->
+              <div class="section-title">Awards</div>
+              <div class="enumeration-text">BS Software Engineering (2010)</div>
+              <div class="enumeration-text">Company Peshawar</div>
+            </div>
+            <div class="skill-section">
+              <!-- Education -->
+              <div class="section-title">Reference</div>
+              <div class="enumeration-text">BS Software Engineering</div>
+              <div class="enumeration-text">CompanyPeshawar</div>
+            </div>
+            <div class="skill-section">
+              <!-- Hobbies -->
+              <div class="section-title">Hobbies</div>
+              <div class="skill-section">
+                <div class="enumeration-text">• Painting</div>
+                <div class="enumeration-text">• Gardening</div>
+                <div class="enumeration-text">• Coding</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-right-column">
+            <!-- Experience -->
+            <div class="skill-section">
+              <div class="section-title">Experience</div>
+
+              <div class="experience-topic-container">
+                <div class="experience-details-card text-detail">
+                  <a class="url-text" href="">Senior Software Engineer</a
+                  >:<br />
+                  Coeus Solutions<br />
+                  <span></span>
+                  <br />
+
+                  <li>
+                    I am looking for large text files for testing the
+                    compression and decompression in all sizes from 1kb to
+                    100mb. Can someone please refer me to download it from some
+                    link.
+                  </li>
+                  <li>
+                    Arbitrarily large text files can be generated on Linux with
+                    the following command.
+                  </li>
+                  <li>
+                    Um, no, not at all what you want for testing the
+                    effectiveness of your compressor. The resulting text is
+                    highly repetitive, and does not represent what a compressor
+                    will see in the real world. Do not use this answer. See the
+                    compression corpora in the other answers.
+                  </li>
+                  <li>This is a test roles for your job.</li>
+
+                  <div class="right-aligned-text bold-text">
+                    12 / 2012 - 12 / 2022
+                  </div>
+                </div>
+                <div class="experience-details-card text-detail">
+                  <a class="url-text" href="">Online Art Tutor</a>:<br />
+                  Genie Devs<br />
+                  <span></span>
+                  <br />
+                  <li>
+                    You can download enwik8 and enwik9 from here. They are
+                    respectively 100,000,000 and 1,000,000,000 bytes of text for
+                    compression benchmarks. You can always pull subsets of those
+                    for smaller tests.
+                  </li>
+                  <li>
+                    Project Gutenberg looks exceptionally promising for this
+                    purpose. This resource contains thousands of books in many
+                    formats. Here is a sample of what is available.
+                  </li>
+                  <li>
+                    Delete it, or replace it with a different answer. Lorem
+                    ipsum is no help here.
+                  </li>
+                  <li>
+                    It's obvious to me from what I see in your answer history,
+                    that you know what you're talking about, so respectfully,
+                    I'm quite interested in any explanation you would have to
+                    offer.
+                  </li>
+
+                  <div class="right-aligned-text bold-text">01 / 2023 - /</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </body>
+</html>

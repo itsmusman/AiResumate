@@ -1,0 +1,16 @@
+export default {
+  newResume: "newResume",
+  PersonalInfoScreen: "PersonalInfoScreen",
+  ResumeListScreen: "ResumeListScreen",
+  // black: "#242644",
+  // blue: "#2e81c9",
+  // red: "#d9544f",
+  // gray: "gray",
+  // lightGray: "lightgray",
+  // tomato: "tomato",
+  // darkblue: "darkblue",
+  // orange: "orange",
+  // appColor: "#6357c7",
+  // transparent: "transparent",
+  // green: "#5aad5a",
+};

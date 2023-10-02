@@ -1,0 +1,390 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="cv.css" />
+  </head>
+  <style>
+    body > div > div {
+      font-family: LibertineCaps;
+      font-size: 11px;
+      letter-spacing: 2px;
+      width: 40%;
+    }
+
+    body > div > div:nth-child(1) {
+      width: 100%;
+      font-size: 32px;
+      letter-spacing: 6px;
+      text-align: center;
+      line-height: 50%;
+    }
+
+    body > div > div:nth-child(2) {
+      float: left;
+    }
+
+    body > div > div:nth-child(3) {
+      float: right;
+      text-align: right;
+    }
+
+    body > div {
+      margin-bottom: 40px;
+    }
+
+    body > div.include-summary > div:nth-child(2),
+    body > div.include-summary > div:nth-child(3) {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
+    body > div.include-summary > div:nth-child(4) {
+      font-family: Libertine;
+      font-size: 16px;
+      letter-spacing: 0px;
+      line-height: 125%;
+      width: 100%;
+      left: 0px;
+      margin-top: 20px;
+      text-align: center;
+      position: absolute;
+    }
+
+    body > div.include-summary {
+      margin-bottom: 75px;
+    }
+
+    body > span:before {
+      display: block;
+      width: 100%;
+      padding-bottom: 2px;
+      border-bottom: 1px black solid;
+      font-family: LibertineBold;
+      font-weight: bold;
+      content: attr(name);
+    }
+
+    body > span {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      clear: both;
+    }
+
+    .left {
+      float: left;
+      width: 60%;
+      margin-bottom: 30px;
+    }
+
+    .right {
+      float: right;
+      width: 37.5%;
+      clear: none;
+      margin-bottom: 30px;
+    }
+
+    div[date]:before {
+      float: right;
+      font-weight: normal;
+      font-style: normal;
+      text-align: right;
+      content: attr(date);
+    }
+
+    div[date] {
+      float: left;
+      width: calc(100% - 34px);
+    }
+
+    div[date] + * {
+      clear: both;
+    }
+
+    div[detail]:after {
+      font-family: LibertineItalic;
+      font-style: normal;
+      font-weight: normal;
+      margin-left: 20px;
+      content: attr(detail);
+    }
+
+    body > span > div {
+      font-weight: bold;
+      margin-left: 20px;
+      margin-top: 5px;
+    }
+    body > span.long > div {
+      margin-bottom: 15px;
+    }
+
+    body > span span {
+      display: block;
+      margin-left: 30px;
+    }
+    body > span.long span {
+      margin-top: 15px;
+    }
+    body > span.long strong + span {
+      margin-top: 0;
+    }
+
+    body > span > span {
+      margin-left: 40px;
+      margin-bottom: 15px;
+    }
+
+    body > span > *:last-child {
+      margin-bottom: 0;
+    }
+
+    .compact > div:before {
+      float: left;
+      width: 20%;
+      margin-left: 20px;
+      text-align: left;
+      font-family: LibertineBold;
+      font-weight: bold;
+      content: attr(name);
+    }
+
+    .compact > div {
+      float: right;
+      width: 100%;
+      font-family: Libertine;
+      font-weight: normal;
+      transform: translateX(10px);
+    }
+
+    .compact > div:last-child {
+      margin-bottom: 20px;
+    }
+
+    .semicompact > span {
+      margin-bottom: 5px;
+    }
+
+    .left.semicompact,
+    .right.semicompact {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin: 0px;
+    }
+
+    slash:before,
+    point:before,
+    gap:before,
+    dash:before {
+      margin: 0px 5px;
+    }
+
+    slash:before {
+      content: "/";
+    }
+
+    point:before {
+      content: "";
+    }
+
+    gap:before {
+      content: "";
+    }
+
+    dash:before {
+      content: "";
+    }
+
+    b,
+    b > *,
+    strong,
+    strong > *,
+    th,
+    th > * {
+      font-family: LibertineBold;
+      font-weight: normal;
+    }
+
+    tr {
+      height: 25px;
+    }
+
+    strong {
+      margin-right: 15px;
+    }
+
+    br + strong {
+      margin-top: 5px;
+      display: inline-block;
+    }
+
+    i {
+      font-family: LibertineItalic;
+      font-style: normal;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000099;
+    }
+
+    table {
+      width: 96%;
+      margin-left: 20px;
+      border: 0;
+    }
+
+    th,
+    td {
+      text-align: left;
+    }
+
+    body > span:last-child {
+      padding-bottom: 50px;
+    }
+
+    * {
+      font-family: Libertine;
+      font-size: 14px;
+
+      -ms-word-break: break-all;
+      word-break: break-all;
+      word-break: break-word;
+      word-break: hyphenate;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      hyphens: auto;
+    }
+
+    @font-face {
+      font-family: "Libertine";
+      src: url("cvfonts/LinLibertine_R.woff");
+    }
+
+    @font-face {
+      font-family: "LibertineBold";
+      src: url("cvfonts/LinLibertine_RB.woff");
+    }
+
+    @font-face {
+      font-family: "LibertineItalic";
+      src: url("cvfonts/LinLibertine_RI.woff");
+    }
+
+    @font-face {
+      font-family: "LibertineCaps";
+      src: url("cvfonts/LinLibertine_aS.woff");
+    }
+  </style>
+
+  <body>
+    <div>
+      <div>Eli Sukhvir</div>
+      <div>
+        Eli@gmail.com<br />
+        03328011990
+      </div>
+      <div>
+        Peshawar<br />
+        Pakistan
+      </div>
+    </div>
+
+    <div>
+      <h3>iOS Developer</h3>
+      <p>
+        Entry point doesn't exist neither at index.js nor index.ios.js. Skip
+        prewarming
+      </p>
+    </div>
+
+    <span name="Education">
+      <div detail="University of Peshawar ,  ">10 / 2006 - 10 / 2010</div>
+      <span> BS Software Engineering </span>
+    </span>
+
+    <span name="Skills" class="left">
+      <div>
+        <li>JavaScript</li>
+        <br />
+        <li>Swift</li>
+        <br />
+        <li>React Native</li>
+        <br />
+      </div>
+    </span>
+    <span name="Hobbies" class="right">
+      <span>
+        <li>Painting</li>
+        <br />
+        <li>Gardening</li>
+        <br />
+        <li>Coding</li>
+        <br />
+      </span>
+    </span>
+
+    <span name="Employment History" class="left">
+      <div detail="" date=" 12 / 2012 &nbsp;&ndash;&nbsp; 12 / 2022">
+        Coeus Solutions
+      </div>
+      <span> Senior Software Engineer </span>
+      <ul>
+        <li>
+          I am looking for large text files for testing the compression and
+          decompression in all sizes from 1kb to 100mb. Can someone please refer
+          me to download it from some link.
+        </li>
+        <li>
+          Arbitrarily large text files can be generated on Linux with the
+          following command.
+        </li>
+        <li>
+          Um, no, not at all what you want for testing the effectiveness of your
+          compressor. The resulting text is highly repetitive, and does not
+          represent what a compressor will see in the real world. Do not use
+          this answer. See the compression corpora in the other answers.
+        </li>
+        <li>This is a test roles for your job.</li>
+      </ul>
+      <div detail="" date=" 01 / 2023 &nbsp;&ndash;&nbsp;  / ">Genie Devs</div>
+      <span> Online Art Tutor </span>
+      <ul>
+        <li>
+          You can download enwik8 and enwik9 from here. They are respectively
+          100,000,000 and 1,000,000,000 bytes of text for compression
+          benchmarks. You can always pull subsets of those for smaller tests.
+        </li>
+        <li>
+          Project Gutenberg looks exceptionally promising for this purpose. This
+          resource contains thousands of books in many formats. Here is a sample
+          of what is available.
+        </li>
+        <li>
+          Delete it, or replace it with a different answer. Lorem ipsum is no
+          help here.
+        </li>
+        <li>
+          It's obvious to me from what I see in your answer history, that you
+          know what you're talking about, so respectfully, I'm quite interested
+          in any explanation you would have to offer.
+        </li>
+      </ul>
+    </span>
+
+    <span name="Certifications" class="left">
+      <div detail="Company Peshawar">10 - 2010</div>
+      <span> BS Software Engineering </span>
+    </span>
+
+    <span name="Awards" class="left">
+      <div detail="Company Peshawar">2010</div>
+      <span> BS Software Engineering </span>
+    </span>
+
+    <span name="Reference" class="left">
+      <div detail="CompanyPeshawar"></div>
+      <span> BS Software Engineering </span>
+    </span>
+  </body>
+</html>

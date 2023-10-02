@@ -1,0 +1,536 @@
+<html>
+  <head>
+   <style>
+      body {
+        margin: auto;
+      }
+      .genie-mjs7 ol,
+      .genie-mjs7 ul {
+        list-style: none;
+      }
+      .genie-mjs7 table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-size: inherit;
+        color: inherit;
+        width: 100%;
+      }
+      .genie-mjs7 ul,
+      .genie-mjs7 li {
+        margin: 0;
+        padding: 0;
+        list-style-type: disc;
+      }
+      .genie-mjs7 ul li {
+        margin: 0 0 0 16px;
+        padding: 0;
+      }
+
+      .genie-mjs7 {
+        box-sizing: border-box;
+      }
+      .genie-mjs7 .name {
+        color: #252932;
+        font-size: 15px;
+        line-height: 17px;
+        font-weight: bold;
+        padding: 0;
+        text-align: left;
+      }
+      .genie-mjs7 .paragraph {
+        position: relative;
+        clear: both;
+      }
+      .genie-mjs7 .heading {
+        clear: both;
+        font-weight: bold;
+        color: #252932;
+        border-bottom: 1px solid #ccc;
+      }
+      .genie-mjs7 .section-title {
+        color: #252932;
+        word-wrap: break-word;
+        vertical-align: middle;
+        display: inline;
+      }
+      .genie-mjs7 .address {
+        position: relative;
+        text-align: left;
+        font-size: 0.917em;
+        line-height: 1.25em;
+        margin-top: 0;
+      }
+      .genie-mjs7 .table_wrapper {
+        width: 100%;
+        margin-top: 0;
+      }
+      .genie-mjs7 table.twocol td {
+        width: 50%;
+      }
+      .genie-mjs7 table.skills {
+        width: 100%;
+      }
+      .genie-mjs7 table.skills th,
+      .genie-mjs7 table.skills td {
+        width: 20%;
+        text-align: center;
+      }
+      .genie-mjs7 table.skills th {
+        text-decoration: underline;
+      }
+      .genie-mjs7 table.skills .skill-name,
+      .genie-mjs7 table.skills .skill-rating {
+        text-align: left;
+        width: 35%;
+      }
+      .genie-mjs7 table.skills .skill-rating {
+        width: 20%;
+      }
+      .genie-mjs7 table.skills .skill-years,
+      .genie-mjs7 table.skills .skill-last {
+        width: 19%;
+      }
+      .genie-mjs7 table.skills .pad1 {
+        width: 5%;
+      }
+      .genie-mjs7 table.skills .pad2,
+      .genie-mjs7 table.skills .pad3 {
+        width: 1%;
+      }
+      .genie-mjs7 .mb5 {
+        margin-bottom: 5px;
+      }
+      .genie-mjs7 .resumeTitle {
+        text-align: left;
+        color: #252932;
+        font-weight: 500;
+      }
+      .genie-mjs7 td.twocol_2 {
+        border-left: 1px solid #fefdfd;
+      }
+      .genie-mjs7 .addressright,
+      .genie-mjs7 .addressleft {
+        display: table-cell;
+        width: 40%;
+      }
+
+      .genie-mjs7 span.padded-line {
+        display: block;
+      }
+      .genie-mjs7 .txtRight {
+        text-align: right;
+        clear: both;
+      }
+      .genie-mjs7 span.job-title,
+      .genie-mjs7 span.degree,
+      .genie-mjs7 span.program-line {
+        font-weight: bold;
+      }
+      .genie-mjs7 span.dates_wrapper {
+        font-weight: bold;
+        display: block;
+        float: left;
+        text-align: left;
+        padding-right: 10px;
+      }
+      .genie-mjs7 .txtItalics {
+        font-style: italic;
+      }
+
+      .genie-mjs7 .iconRow {
+        clear: both;
+        padding-bottom: 7px;
+        word-wrap: break-word;
+      }
+      .genie-mjs7 .iconRow .iconSvg {
+        width: 20px;
+        height: 20px;
+        float: left;
+        margin-right: 5px;
+      }
+      .genie-mjs7 .iconRow .icoTxt {
+        margin-left: 25px;
+      }
+
+      .genie-mjs7 .headingIcon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+      .genie-mjs7 .headingIcon svg {
+        height: 30px;
+        width: 30px;
+        display: block;
+      }
+
+      .genie-mjs7 .iconRow svg rect,
+      .genie-mjs7 .headingIcon svg rect {
+        fill: #252932;
+      }
+      .genie-mjs7 .iconRow svg path,
+      .genie-mjs7 .headingIcon svg path {
+        fill: #fff;
+      }
+
+      .genie-mjs7 .ratingWrapper {
+        float: right;
+        text-align: right;
+        height: 10px;
+        padding: 3px 0;
+      }
+      .genie-mjs7 .rtngSec .txtRight {
+        position: relative;
+        top: -3px;
+      }
+      .genie-mjs7 .ratingWrapper svg {
+        height: 13px;
+      }
+      .genie-mjs7 .ratingWrapper .default-fill {
+        fill: #252932;
+      }
+
+      .genie-mjs7,
+      .genie-mjs7 table {
+        line-height: 16px;
+      }
+      .genie-mjs7.pagesize {         width: 792px;
+      }
+      .genie-mjs7.fontsize {
+        font-size: 11px;
+      }
+      .genie-mjs7.font-face {
+        font-family: "Century Gothic", Helvetica, sans-serif;
+      }
+      .genie-mjs7.vmargins {
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
+      .genie-mjs7.hmargins {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .genie-mjs7 .section {
+        padding-top: 20px;
+      }
+      .genie-mjs7 .address {
+        font-size: 11px;
+        line-height: 21px;
+        padding-top: 15px;
+      }
+      .genie-mjs7 .heading {
+        margin-bottom: 10px;
+      }
+      .genie-mjs7 .job-title,
+      .genie-mjs7 span.degree,
+      .genie-mjs7 span.program-line {
+        font-size: 14px;
+      }
+      .genie-mjs7 .paragraph {
+        padding-top: 10px;
+      }
+      .genie-mjs7 .rtngSec .paragraph {
+        padding-top: 5px;
+      }
+      .genie-mjs7 .first-section,
+      .genie-mjs7 .first-paragraph,
+      .genie-mjs7 .SECTION_CNTC {
+        padding-top: 0 !important;
+      }
+      .genie-mjs7 .single-column,
+      .genie-mjs7 .main-column {
+        margin-left: 120px;
+      }
+      .genie-mjs7 .section-title,
+      .genie-mjs7 .resumeTitle {
+        font-size: 16px;
+        line-height: 21px;
+      }
+      .genie-mjs7 .name {
+        font-size: 36px;
+        line-height: 46px;
+      }
+      .genie-mjs7 table.skills td {
+        padding-top: 5px;
+      }
+      .genie-mjs7 .noPind {
+        margin-left: 0;
+      }
+      .genie-mjs7 .name,
+      .genie-mjs7 .section-title,
+      .genie-mjs7 .resumeTitle {
+        color: #252932;
+      }
+      .genie-mjs7 span.dates_wrapper {
+        width: 110px;
+        font-size: 11px;
+        line-height: 17px;
+      }
+
+      .genie-mjs7 .iconRow svg rect,
+      .genie-mjs7 .headingIcon svg rect {
+        fill: #252932;
+      }
+      .genie-mjs7 .ratingfield p {
+        display: inline;
+      }
+
+      .genie-mjs7 .sortable-item .section-title,
+      body.GAK7 .parent-drag.active.genie-mjs7 .section-title {
+        display: inline;
+      }
+      .genie-mjs7 .sortableInner .sortable-item.active .wrapper-bg + div,
+      body.GAK7
+        .genie-mjs7
+        ._single-parent-drag.active.genie-mjs7
+        .wrapper-bg
+        + div {
+        position: relative;
+        z-index: 11;
+      }
+      .genie-mjs7 .sortable-item .single-column span:first-child,
+      body.GAK7
+        ._single-parent-drag.active.genie-mjs7
+        .single-column
+        span:first-child {
+        display: inline-block;
+      }
+      .genie-mjs7 .ratingWrapper .default-fill {
+        fill: #252932;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page-wrap">
+      <div class="genie-mjs7 fontsize font-face vmargins hmargins pagesize">
+        <div class="top-section">
+          <div class="left-box">
+            <div class="section notdraggable first-section">
+              <div class="paragraph first-paragraph">
+                <div class="name">
+                  <span class="field">M.</span><span> </span
+                  ><span class="field">Eli Sukhvir</span>
+                </div>
+                <div class="resumeTitle"></div>
+              </div>
+            </div>
+            <div class="section SECTION_CNTC notdraggable">
+              <div class="paragraph PARAGRAPH_CNTC first-paragraph">
+                <div class="address">
+                  <div class="addressleft">
+                    <div class="iconRow">
+                      <div class="iconSvg"></div>
+                      <div class="icoTxt">
+                        <span class="field"></span>
+                        ><span>, </span><span class="field">Peshawar</span
+                        ><span>, </span><span class="field">Pakistan</span>
+                      </div>
+                    </div>
+                    <div class="iconRow">
+                      <div class="iconSvg"></div>
+                      <div class="icoTxt">
+                        <span class="field">03328011990</span
+                        ><span class="field"></span>
+                      </div>
+                    </div>
+                    <div class="iconRow">
+                      <div class="iconSvg"></div>
+                      <div class="icoTxt">
+                        <span class="field">Eli@gmail.com</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="addressright"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-box"></div>
+        </div>
+        <div class="parentContainer">
+          <div>
+            <div class="section notdraggable">
+              <div class="paragraph first-paragraph">
+                <div class="field single-column noPind">
+                  <p>
+                  Entry point doesn't exist neither at index.js nor index.ios.js. Skip prewarming
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="section rtngSec">
+              <div class="heading">
+                <span class="headingIcon"></span>
+              <span class="section-title">Skills</span>
+              </div>
+              <div class="paragraph first-paragraph">
+                <div class="single-column main-column">
+                  <span class="ratingfield"
+                    ><ul>
+                     <li>JavaScript</li><br/><li>Swift</li><br/><li>React Native</li><br/>
+                    </ul></span
+                  ><span class="padded-line txtRight"></span>
+                </div>
+              </div>
+              <div class="heading">
+              <span class="headingIcon"></span>
+            <span class="section-title">Hobbies</span>
+            </div>
+            <div class="paragraph first-paragraph">
+              <div class="single-column main-column">
+                <span class="ratingfield"
+                  ><ul>
+                   <li>Painting</li><br/><li>Gardening</li><br/><li>Coding</li><br/>
+                  </ul></span
+                ><span class="padded-line txtRight"></span>
+              </div>
+            </div>
+            </div>
+            <div class="section">
+              <div class="heading">
+                <span class="headingIcon"></span
+                ><span class="section-title">Work History</span>
+              </div>
+               <div class="paragraph first-paragraph">
+<span class="dates_wrapper"
+  ><span class="jobdates" format="%Y-%m">2012 / 12</span
+  ><span> - </span
+  ><span class="jobdates" format="%Y-%m">2022 / 12</span></span
+>
+<div class="single-column">
+  <span class="padded-line mb5"
+    ><span class="job-title">Senior Software Engineer</span
+    ></span
+  ><span class="padded-line txtItalics mb5"
+    ><span class="companyname">Coeus Solutions</span><span>,</span
+    ><span class="job-location jobcity"></span
+    ><span></span
+    ><span class="job-location jobstate"></span></span
+  ><span class="padded-line"
+    ><span class="jobline"
+      ><ul><li>I am looking for large text files for testing the compression and decompression in all sizes from 1kb to 100mb. Can someone please refer me to download it from some link.</li><li>Arbitrarily large text files can be generated on Linux with the following command.</li><li>Um, no, not at all what you want for testing the effectiveness of your compressor. The resulting text is highly repetitive, and does not represent what a compressor will see in the real world. Do not use this answer. See the compression corpora in the other answers.</li><li>This is a test roles for your job.</li></ul></span>
+      </span> 
+      </div>
+      </div> <div class="paragraph first-paragraph">
+<span class="dates_wrapper"
+  ><span class="jobdates" format="%Y-%m">2023 / 01</span
+  ><span> - </span
+  ><span class="jobdates" format="%Y-%m"> / </span></span
+>
+<div class="single-column">
+  <span class="padded-line mb5"
+    ><span class="job-title">Online Art Tutor</span
+    ></span
+  ><span class="padded-line txtItalics mb5"
+    ><span class="companyname">Genie Devs</span><span>,</span
+    ><span class="job-location jobcity"></span
+    ><span></span
+    ><span class="job-location jobstate"></span></span
+  ><span class="padded-line"
+    ><span class="jobline"
+      ><ul><li>You can download enwik8 and enwik9 from here. They are respectively 100,000,000 and 1,000,000,000 bytes of text for compression benchmarks. You can always pull subsets of those for smaller tests.</li><li>Project Gutenberg looks exceptionally promising for this purpose. This resource contains thousands of books in many formats. Here is a sample of what is available.</li><li>Delete it, or replace it with a different answer. Lorem ipsum is no help here.</li><li>It's obvious to me from what I see in your answer history, that you know what you're talking about, so respectfully, I'm quite interested in any explanation you would have to offer.</li></ul></span>
+      </span> 
+      </div>
+      </div> 
+              
+            </div>
+            <div class="section">
+              <div class="heading">
+                <span class="headingIcon"></span
+                ><span class="section-title">Education</span>
+              </div>
+              <div class="paragraph first-paragraph">
+                <div class="single-column">
+<span class="padded-line"
+  ><span class="degree"></span><span class="program-line">BS Software Engineering</span></span
+><span class="padded-line txtItalics"
+  ><span
+    class="companyname companyname_educ"
+    dependency="SCHO"
+    >University of Peshawar</span
+  ><span> </span><span
+  class="companyname companyname_educ"
+  dependency="SCHO"
+  ></span
+><span> - </span
+><span class="job-location jobcity">10 / 2006 - 10 / 2010</span
+  ><span> </span
+  ><span class="job-location jobstate"></span></span
+><span class="padded-line"><span class="field"></span></span>
+</div>
+              </div>
+            </div>
+         
+            <div class="section">
+             
+      <div class="heading">
+      <span class="headingIcon"></span
+      ><span class="section-title">Certificate</span>
+    </div>
+    <div class="paragraph first-paragraph">
+          <div class="single-column">
+         <span class="padded-line"
+           ><span class="degree"></span><span class="program-line">BS Software Engineering</span></span
+         ><span class="padded-line txtItalics"
+           ><span
+             class="companyname companyname_educ"
+             dependency="SCHO"
+             >Company Peshawar</span
+           ><span> </span>
+           <span class="job-location jobcity">10 - 2010</span
+           ><span> </span
+           ><span class="job-location jobstate"></span></span
+         ><span class="padded-line"><span class="field"></span></span>
+         </div>
+          </div> 
+            </div>
+            <div class="section">
+            
+      <div class="heading">
+      <span class="headingIcon"></span
+      ><span class="section-title">Awards</span>
+    </div>
+    <div class="paragraph first-paragraph">
+          <div class="single-column">
+         <span class="padded-line"
+           ><span class="degree"></span><span class="program-line">BS Software Engineering</span></span
+         ><span class="padded-line txtItalics"
+           ><span
+             class="companyname companyname_educ"
+             dependency="SCHO"
+             >Company Peshawar</span
+           ><span> </span>
+           <span class="job-location jobcity">2010</span
+           ><span> </span
+           ><span class="job-location jobstate"></span></span
+         ><span class="padded-line"><span class="field"></span></span>
+         </div>
+          </div> 
+           </div>
+           <div class="section">
+           
+      <div class="heading">
+      <span class="headingIcon"></span
+      ><span class="section-title">Reference</span>
+    </div>
+    <div class="paragraph first-paragraph">
+          <div class="single-column">
+         <span class="padded-line"
+           ><span class="degree"></span><span class="program-line">BS Software Engineering</span></span
+         ><span class="padded-line txtItalics"
+           ><span
+             class="companyname companyname_educ"
+             dependency="SCHO"
+             >CompanyPeshawar</span
+           ><span> </span>
+          
+         </div>
+          </div> 
+          </div>
+           
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
